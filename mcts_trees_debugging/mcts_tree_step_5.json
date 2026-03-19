@@ -1,0 +1,1472 @@
+{
+    "type": "DecisionNode",
+    "state": 10,
+    "visits": 2000,
+    "value": -738.600000000002,
+    "success": 405,
+    "failure": 1595,
+    "children": {
+        "1": {
+            "type": "ChanceNode",
+            "action_id": 1,
+            "visits": 188,
+            "value": -94.49999999999999,
+            "success": 28,
+            "failure": 160,
+            "children": {
+                "9": {
+                    "type": "DecisionNode",
+                    "state": 9,
+                    "visits": 66,
+                    "value": -38.7,
+                    "success": 5,
+                    "failure": 61,
+                    "children": {
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 17,
+                            "value": -9.600000000000001,
+                            "success": 1,
+                            "failure": 16,
+                            "children": {
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 10,
+                                    "value": -3.9000000000000004,
+                                    "success": 1,
+                                    "failure": 9,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 3,
+                                    "value": -1.7,
+                                    "success": 0,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 4,
+                                    "value": -4.0,
+                                    "success": 0,
+                                    "failure": 4,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 13,
+                            "value": -8.9,
+                            "success": 0,
+                            "failure": 13,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 7,
+                                    "value": -4.6000000000000005,
+                                    "success": 0,
+                                    "failure": 7,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 3,
+                                    "value": -3.0,
+                                    "success": 0,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 3,
+                                    "value": -1.3,
+                                    "success": 0,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 20,
+                            "value": -10.1,
+                            "success": 3,
+                            "failure": 17,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 6,
+                                    "value": 0.20000000000000007,
+                                    "success": 2,
+                                    "failure": 4,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 10,
+                                    "value": -10.0,
+                                    "success": 0,
+                                    "failure": 10,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 4,
+                                    "value": -0.30000000000000004,
+                                    "success": 1,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 15,
+                            "value": -9.700000000000001,
+                            "success": 1,
+                            "failure": 14,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 2,
+                                    "value": -0.4,
+                                    "success": 1,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 7,
+                                    "value": -5.800000000000001,
+                                    "success": 0,
+                                    "failure": 7,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 6,
+                                    "value": -3.5,
+                                    "success": 0,
+                                    "failure": 6,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                },
+                "11": {
+                    "type": "DecisionNode",
+                    "state": 11,
+                    "visits": 66,
+                    "value": -66.0,
+                    "success": 0,
+                    "failure": 66,
+                    "children": {}
+                },
+                "14": {
+                    "type": "DecisionNode",
+                    "state": 14,
+                    "visits": 56,
+                    "value": 10.2,
+                    "success": 23,
+                    "failure": 33,
+                    "children": {
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 15,
+                            "value": 2.4000000000000004,
+                            "success": 6,
+                            "failure": 9,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 4,
+                                    "value": 4.0,
+                                    "success": 4,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 8,
+                                    "value": -0.3999999999999999,
+                                    "success": 2,
+                                    "failure": 6,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 3,
+                                    "value": -1.2,
+                                    "success": 0,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 8,
+                            "value": -0.6000000000000001,
+                            "success": 1,
+                            "failure": 7,
+                            "children": {
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 2,
+                                    "value": -0.30000000000000004,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 2,
+                                    "value": -0.30000000000000004,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 4,
+                                    "value": -1.1102230246251565e-16,
+                                    "success": 1,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 10,
+                            "value": 0.30000000000000004,
+                            "success": 3,
+                            "failure": 7,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 4,
+                                    "value": -1.2999999999999998,
+                                    "success": 0,
+                                    "failure": 4,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 5,
+                                    "value": 0.5999999999999999,
+                                    "success": 2,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 1,
+                                    "value": 1.0,
+                                    "success": 1,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 22,
+                            "value": 8.3,
+                            "success": 13,
+                            "failure": 9,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 6,
+                                    "value": 2.0999999999999996,
+                                    "success": 3,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 11,
+                                    "value": 1.2000000000000002,
+                                    "success": 5,
+                                    "failure": 6,
+                                    "children": "Max depth reached"
+                                },
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 5,
+                                    "value": 5.0,
+                                    "success": 5,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "2": {
+            "type": "ChanceNode",
+            "action_id": 2,
+            "visits": 377,
+            "value": -157.79999999999995,
+            "success": 70,
+            "failure": 307,
+            "children": {
+                "14": {
+                    "type": "DecisionNode",
+                    "state": 14,
+                    "visits": 130,
+                    "value": 41.199999999999996,
+                    "success": 67,
+                    "failure": 63,
+                    "children": {
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 36,
+                            "value": 11.800000000000002,
+                            "success": 19,
+                            "failure": 17,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 14,
+                                    "value": 14.0,
+                                    "success": 14,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 12,
+                                    "value": 3.0999999999999996,
+                                    "success": 5,
+                                    "failure": 7,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 10,
+                                    "value": -5.300000000000001,
+                                    "success": 0,
+                                    "failure": 10,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 18,
+                            "value": 0.6999999999999997,
+                            "success": 6,
+                            "failure": 12,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 8,
+                                    "value": -2.7,
+                                    "success": 1,
+                                    "failure": 7,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 6,
+                                    "value": 2.2,
+                                    "success": 3,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 4,
+                                    "value": 1.2,
+                                    "success": 2,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 9,
+                            "value": -2.0999999999999996,
+                            "success": 2,
+                            "failure": 7,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 1,
+                                    "value": 1.0,
+                                    "success": 1,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 4,
+                                    "value": -1.4,
+                                    "success": 1,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 4,
+                                    "value": -1.7,
+                                    "success": 0,
+                                    "failure": 4,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 66,
+                            "value": 29.999999999999996,
+                            "success": 39,
+                            "failure": 27,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 25,
+                                    "value": 25.0,
+                                    "success": 25,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 27,
+                                    "value": 7.699999999999999,
+                                    "success": 12,
+                                    "failure": 15,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 14,
+                                    "value": -2.7,
+                                    "success": 2,
+                                    "failure": 12,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                },
+                "6": {
+                    "type": "DecisionNode",
+                    "state": 6,
+                    "visits": 126,
+                    "value": -78.00000000000003,
+                    "success": 3,
+                    "failure": 123,
+                    "children": {
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 35,
+                            "value": -20.7,
+                            "success": 0,
+                            "failure": 35,
+                            "children": {
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 17,
+                                    "value": -8.600000000000001,
+                                    "success": 0,
+                                    "failure": 17,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 9,
+                                    "value": -3.1,
+                                    "success": 0,
+                                    "failure": 9,
+                                    "children": "Max depth reached"
+                                },
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 9,
+                                    "value": -9.0,
+                                    "success": 0,
+                                    "failure": 9,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 20,
+                            "value": -15.5,
+                            "success": 0,
+                            "failure": 20,
+                            "children": {
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 6,
+                                    "value": -6.0,
+                                    "success": 0,
+                                    "failure": 6,
+                                    "children": "Max depth reached"
+                                },
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 8,
+                                    "value": -8.0,
+                                    "success": 0,
+                                    "failure": 8,
+                                    "children": "Max depth reached"
+                                },
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 6,
+                                    "value": -1.5,
+                                    "success": 0,
+                                    "failure": 6,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 26,
+                            "value": -17.9,
+                            "success": 2,
+                            "failure": 24,
+                            "children": {
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 8,
+                                    "value": -8.0,
+                                    "success": 0,
+                                    "failure": 8,
+                                    "children": "Max depth reached"
+                                },
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 8,
+                                    "value": -8.0,
+                                    "success": 0,
+                                    "failure": 8,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 10,
+                                    "value": -1.9,
+                                    "success": 2,
+                                    "failure": 8,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 44,
+                            "value": -23.899999999999995,
+                            "success": 1,
+                            "failure": 43,
+                            "children": {
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 14,
+                                    "value": -14.0,
+                                    "success": 0,
+                                    "failure": 14,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 15,
+                                    "value": -5.6000000000000005,
+                                    "success": 1,
+                                    "failure": 14,
+                                    "children": "Max depth reached"
+                                },
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 15,
+                                    "value": -4.3,
+                                    "success": 0,
+                                    "failure": 15,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                },
+                "11": {
+                    "type": "DecisionNode",
+                    "state": 11,
+                    "visits": 121,
+                    "value": -121.0,
+                    "success": 0,
+                    "failure": 121,
+                    "children": {}
+                }
+            }
+        },
+        "3": {
+            "type": "ChanceNode",
+            "action_id": 3,
+            "visits": 77,
+            "value": -51.0,
+            "success": 5,
+            "failure": 72,
+            "children": {
+                "11": {
+                    "type": "DecisionNode",
+                    "state": 11,
+                    "visits": 31,
+                    "value": -31.0,
+                    "success": 0,
+                    "failure": 31,
+                    "children": {}
+                },
+                "6": {
+                    "type": "DecisionNode",
+                    "state": 6,
+                    "visits": 24,
+                    "value": -12.0,
+                    "success": 2,
+                    "failure": 22,
+                    "children": {
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 4,
+                            "value": -2.9,
+                            "success": 0,
+                            "failure": 4,
+                            "children": {
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 2,
+                                    "value": -2.0,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 2,
+                                    "value": -0.8999999999999999,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 4,
+                            "value": -2.9,
+                            "success": 0,
+                            "failure": 4,
+                            "children": {
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 2,
+                                    "value": -0.8999999999999999,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 1,
+                                    "value": -1.0,
+                                    "success": 0,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                },
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 1,
+                                    "value": -1.0,
+                                    "success": 0,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 7,
+                            "value": -2.5,
+                            "success": 1,
+                            "failure": 6,
+                            "children": {
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 2,
+                                    "value": -1.9,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 4,
+                                    "value": 0.4,
+                                    "success": 1,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 1,
+                                    "value": -1.0,
+                                    "success": 0,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 8,
+                            "value": -3.3,
+                            "success": 1,
+                            "failure": 7,
+                            "children": {
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 2,
+                                    "value": -2.0,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 4,
+                                    "value": 0.7000000000000001,
+                                    "success": 1,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 2,
+                                    "value": -2.0,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                },
+                "9": {
+                    "type": "DecisionNode",
+                    "state": 9,
+                    "visits": 22,
+                    "value": -8.0,
+                    "success": 3,
+                    "failure": 19,
+                    "children": {
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 6,
+                            "value": -2.4,
+                            "success": 1,
+                            "failure": 5,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 2,
+                                    "value": -0.1,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 2,
+                                    "value": -0.30000000000000004,
+                                    "success": 1,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 2,
+                                    "value": -2.0,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 6,
+                            "value": -1.6,
+                            "success": 2,
+                            "failure": 4,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 4,
+                                    "value": 0.40000000000000013,
+                                    "success": 2,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 2,
+                                    "value": -2.0,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 5,
+                            "value": -1.6,
+                            "success": 0,
+                            "failure": 5,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 2,
+                                    "value": -1.0999999999999999,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 2,
+                                    "value": -0.2,
+                                    "success": 0,
+                                    "failure": 2,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 1,
+                                    "value": -0.30000000000000004,
+                                    "success": 0,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 4,
+                            "value": -2.3,
+                            "success": 0,
+                            "failure": 4,
+                            "children": {
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 3,
+                                    "value": -2.2,
+                                    "success": 0,
+                                    "failure": 3,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 1,
+                                    "value": -0.1,
+                                    "success": 0,
+                                    "failure": 1,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "0": {
+            "type": "ChanceNode",
+            "action_id": 0,
+            "visits": 1358,
+            "value": -435.3000000000003,
+            "success": 302,
+            "failure": 1056,
+            "children": {
+                "14": {
+                    "type": "DecisionNode",
+                    "state": 14,
+                    "visits": 452,
+                    "value": 99.40000000000002,
+                    "success": 226,
+                    "failure": 226,
+                    "children": {
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 31,
+                            "value": -3.9000000000000004,
+                            "success": 6,
+                            "failure": 25,
+                            "children": {
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 10,
+                                    "value": -4.0,
+                                    "success": 1,
+                                    "failure": 9,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 11,
+                                    "value": -4.1,
+                                    "success": 0,
+                                    "failure": 11,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 10,
+                                    "value": 4.2,
+                                    "success": 5,
+                                    "failure": 5,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 275,
+                            "value": 85.60000000000002,
+                            "success": 152,
+                            "failure": 123,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 91,
+                                    "value": 91.0,
+                                    "success": 91,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 94,
+                                    "value": -32.00000000000001,
+                                    "success": 15,
+                                    "failure": 79,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 90,
+                                    "value": 26.599999999999994,
+                                    "success": 46,
+                                    "failure": 44,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 83,
+                            "value": 12.900000000000004,
+                            "success": 40,
+                            "failure": 43,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 26,
+                                    "value": 26.0,
+                                    "success": 26,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "14": {
+                                    "type": "DecisionNode",
+                                    "state": 14,
+                                    "visits": 26,
+                                    "value": 1.5999999999999994,
+                                    "success": 9,
+                                    "failure": 17,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 31,
+                                    "value": -14.700000000000001,
+                                    "success": 5,
+                                    "failure": 26,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 62,
+                            "value": 4.299999999999999,
+                            "success": 27,
+                            "failure": 35,
+                            "children": {
+                                "15": {
+                                    "type": "DecisionNode",
+                                    "state": 15,
+                                    "visits": 21,
+                                    "value": 21.0,
+                                    "success": 21,
+                                    "failure": 0,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 19,
+                                    "value": -9.0,
+                                    "success": 2,
+                                    "failure": 17,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 22,
+                                    "value": -7.7,
+                                    "success": 4,
+                                    "failure": 18,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                },
+                "6": {
+                    "type": "DecisionNode",
+                    "state": 6,
+                    "visits": 449,
+                    "value": -313.3,
+                    "success": 18,
+                    "failure": 431,
+                    "children": {
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 102,
+                            "value": -72.3,
+                            "success": 8,
+                            "failure": 94,
+                            "children": {
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 22,
+                                    "value": -22.0,
+                                    "success": 0,
+                                    "failure": 22,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 40,
+                                    "value": -10.299999999999999,
+                                    "success": 8,
+                                    "failure": 32,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 40,
+                                    "value": -40.0,
+                                    "success": 0,
+                                    "failure": 40,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 177,
+                            "value": -113.29999999999995,
+                            "success": 8,
+                            "failure": 169,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 50,
+                                    "value": -19.7,
+                                    "success": 8,
+                                    "failure": 42,
+                                    "children": "Max depth reached"
+                                },
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 62,
+                                    "value": -28.599999999999998,
+                                    "success": 0,
+                                    "failure": 62,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 65,
+                                    "value": -65.0,
+                                    "success": 0,
+                                    "failure": 65,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 66,
+                            "value": -53.400000000000006,
+                            "success": 0,
+                            "failure": 66,
+                            "children": {
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 26,
+                                    "value": -26.0,
+                                    "success": 0,
+                                    "failure": 26,
+                                    "children": "Max depth reached"
+                                },
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 19,
+                                    "value": -6.400000000000002,
+                                    "success": 0,
+                                    "failure": 19,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 21,
+                                    "value": -21.0,
+                                    "success": 0,
+                                    "failure": 21,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 103,
+                            "value": -74.3,
+                            "success": 2,
+                            "failure": 101,
+                            "children": {
+                                "2": {
+                                    "type": "DecisionNode",
+                                    "state": 2,
+                                    "visits": 28,
+                                    "value": -13.6,
+                                    "success": 0,
+                                    "failure": 28,
+                                    "children": "Max depth reached"
+                                },
+                                "7": {
+                                    "type": "DecisionNode",
+                                    "state": 7,
+                                    "visits": 46,
+                                    "value": -46.0,
+                                    "success": 0,
+                                    "failure": 46,
+                                    "children": "Max depth reached"
+                                },
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 29,
+                                    "value": -14.699999999999998,
+                                    "success": 2,
+                                    "failure": 27,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                },
+                "9": {
+                    "type": "DecisionNode",
+                    "state": 9,
+                    "visits": 457,
+                    "value": -221.39999999999975,
+                    "success": 58,
+                    "failure": 399,
+                    "children": {
+                        "2": {
+                            "type": "ChanceNode",
+                            "action_id": 2,
+                            "visits": 67,
+                            "value": -40.400000000000006,
+                            "success": 7,
+                            "failure": 60,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 21,
+                                    "value": -9.2,
+                                    "success": 2,
+                                    "failure": 19,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 30,
+                                    "value": -30.0,
+                                    "success": 0,
+                                    "failure": 30,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 16,
+                                    "value": -1.2,
+                                    "success": 5,
+                                    "failure": 11,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "0": {
+                            "type": "ChanceNode",
+                            "action_id": 0,
+                            "visits": 57,
+                            "value": -36.50000000000001,
+                            "success": 3,
+                            "failure": 54,
+                            "children": {
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 13,
+                                    "value": -13.0,
+                                    "success": 0,
+                                    "failure": 13,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 24,
+                                    "value": -16.200000000000003,
+                                    "success": 2,
+                                    "failure": 22,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 20,
+                                    "value": -7.300000000000001,
+                                    "success": 1,
+                                    "failure": 19,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "1": {
+                            "type": "ChanceNode",
+                            "action_id": 1,
+                            "visits": 250,
+                            "value": -98.09999999999998,
+                            "success": 40,
+                            "failure": 210,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 93,
+                                    "value": -21.999999999999996,
+                                    "success": 23,
+                                    "failure": 70,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 76,
+                                    "value": -44.70000000000001,
+                                    "success": 5,
+                                    "failure": 71,
+                                    "children": "Max depth reached"
+                                },
+                                "13": {
+                                    "type": "DecisionNode",
+                                    "state": 13,
+                                    "visits": 81,
+                                    "value": -31.4,
+                                    "success": 12,
+                                    "failure": 69,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        },
+                        "3": {
+                            "type": "ChanceNode",
+                            "action_id": 3,
+                            "visits": 82,
+                            "value": -46.10000000000001,
+                            "success": 8,
+                            "failure": 74,
+                            "children": {
+                                "10": {
+                                    "type": "DecisionNode",
+                                    "state": 10,
+                                    "visits": 27,
+                                    "value": -10.8,
+                                    "success": 4,
+                                    "failure": 23,
+                                    "children": "Max depth reached"
+                                },
+                                "5": {
+                                    "type": "DecisionNode",
+                                    "state": 5,
+                                    "visits": 25,
+                                    "value": -25.0,
+                                    "success": 0,
+                                    "failure": 25,
+                                    "children": "Max depth reached"
+                                },
+                                "8": {
+                                    "type": "DecisionNode",
+                                    "state": 8,
+                                    "visits": 30,
+                                    "value": -10.299999999999997,
+                                    "success": 4,
+                                    "failure": 26,
+                                    "children": "Max depth reached"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
