@@ -53,7 +53,7 @@ class DecisionNode:
             "failure": int(self.failure)
         }
         
-        # if we haven't reached the maximum depth, continue recursively traversing the ChanceNodes below
+        # if haven't reached the maximum depth, continue recursively traversing the ChanceNodes below
         if current_depth < max_depth:
             data["children"] = {
                 str(action_id): child.to_dict(current_depth + 1, max_depth)
@@ -103,16 +103,60 @@ class ChanceNode:
 # MCTS
 class MCTS:
     # Initialize the MCTS with the environment
-    def __init__(self, env, iterations=1000):
+    def __init__(self, env, iterations=1000, rollout_epsilon=0.2):
         self.env = env
         self.iterations = iterations
+        self.rollout_epsilon = rollout_epsilon
         self.action_space_size = env.action_space.n # get the #of actions from the given environment 
+        self.holes = {5, 7, 11, 12}
+        self.goal_state = 15
 
     def is_terminal(self, state):
-        if state == 15: 
+        if state == self.goal_state:
             return True
-        holes = {5, 7, 11, 12} 
-        return state in holes or state == 15
+        return state in self.holes or state == self.goal_state
+
+    def _state_to_row_col(self, state):
+        return divmod(state, 4)
+
+    def _is_adjacent_to_hole(self, state):
+        row, col = self._state_to_row_col(state)
+        for hole in self.holes:
+            hole_row, hole_col = self._state_to_row_col(hole)
+            if abs(row - hole_row) + abs(col - hole_col) == 1:
+                return True
+        return False
+
+    def _heuristic_score(self, next_state, done):
+        if done:
+            if next_state == self.goal_state:
+                return 100.0
+            return -100.0
+
+        row, col = self._state_to_row_col(next_state)
+        goal_row, goal_col = self._state_to_row_col(self.goal_state)
+        manhattan_distance = abs(goal_row - row) + abs(goal_col - col)
+
+        score = -manhattan_distance
+        if self._is_adjacent_to_hole(next_state):
+            score -= 2.0
+        return score
+
+    def _greedy_rollout_action(self, state):
+        best_action = None
+        best_score = float("-inf")
+
+        for action in range(self.action_space_size):
+            transitions = self.env.unwrapped.P[state][action]
+            expected_score = 0.0
+            for probability, next_state, reward, done in transitions:
+                expected_score += probability * self._heuristic_score(next_state, done)
+
+            if expected_score > best_score:
+                best_score = expected_score
+                best_action = action
+
+        return best_action
 
     def search(self, initial_state):
         root = DecisionNode(state=initial_state) # initialize the root node with the initial state
@@ -122,7 +166,7 @@ class MCTS:
             node = self._select(root)
             reward, outcome = self._simulate(node.state)
             self._backpropagate(node, reward, outcome)
-        
+
         return root.best_child(c_param=0)
 
     def _select(self, node: DecisionNode):
@@ -188,7 +232,10 @@ class MCTS:
         outcome = 'timeout'
 
         while not done and depth < max_depth:
-            action = self.env.action_space.sample() # get action from the environment action space
+            if random.random() < self.rollout_epsilon:
+                action = self.env.action_space.sample()
+            else:
+                action = self._greedy_rollout_action(current_state)
             next_state, reward, done, truncated, _ = self.env.step(action)
 
             if done:
@@ -251,11 +298,11 @@ if __name__ == "__main__":
     while not (done or truncated):
         action = mcts.search(obs) # Get the best action from the MCTS on the current state
 
-        # save the mcts tree after each step to a json file for visualization
-        tree_data = mcts.root.to_dict(current_depth=0, max_depth=4)
-        with open(f"{folder_name}/mcts_tree_step_{step}.json", "w") as f:
-            json.dump(tree_data, f, indent=4, ensure_ascii=False)
-        print(f"Saved MCTS tree for step {step} to {folder_name}/mcts_tree_step_{step}.json")
+        # # save the mcts tree after each step to a json file for visualization
+        # tree_data = mcts.root.to_dict(current_depth=0, max_depth=4)
+        # with open(f"{folder_name}/mcts_tree_step_{step}.json", "w") as f:
+        #     json.dump(tree_data, f, indent=4, ensure_ascii=False)
+        # print(f"Saved MCTS tree for step {step} to {folder_name}/mcts_tree_step_{step}.json")
 
         obs, reward, done, truncated, info = real_env.step(action) # Take the action
         step += 1 

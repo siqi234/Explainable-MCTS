@@ -197,13 +197,13 @@ class MCTS:
                     total_rewards += 1.0
                     outcome = 'success'
                 else:
-                    total_rewards += -0.0
+                    total_rewards += -1.0
                     outcome = 'hole'
                 break
             if truncated:
                 break
             
-            total_rewards -= 0.1
+            total_rewards -= 0.01
             depth += 1
             current_state = next_state
 
@@ -236,7 +236,7 @@ if __name__ == "__main__":
     sim_env.reset(seed=42)
 
     # Run MCTS to get the best action from the initial state with 1000 iterations
-    mcts = MCTS(sim_env, iterations=2000)
+    # mcts = MCTS(sim_env, iterations=2000)
     
     # Define the status of the game
     done = False
@@ -249,6 +249,8 @@ if __name__ == "__main__":
     print("Start MCTS Agent on *Slippery* Frozen Lake...")
     # Start the game loop
     while not (done or truncated):
+        sim_env.unwrapped.s = obs
+        mcts = MCTS(sim_env, iterations=1000)
         action = mcts.search(obs) # Get the best action from the MCTS on the current state
 
         # save the mcts tree after each step to a json file for visualization
