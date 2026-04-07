@@ -83,7 +83,7 @@ class ChanceNode:
             "type": "ChanceNode",
             "action_id": int(self.action_id),
             "visits": int(self.visits),
-            "value": float(self.value), # the expected value is the core basis for decision explanation
+            "value": float(self.value), 
             # add success and failure counts
             "success": int(self.success),
             "failure": int(self.failure)
@@ -103,60 +103,16 @@ class ChanceNode:
 # MCTS
 class MCTS:
     # Initialize the MCTS with the environment
-    def __init__(self, env, iterations=1000, rollout_epsilon=0.2):
+    def __init__(self, env, iterations=1000):
         self.env = env
         self.iterations = iterations
-        self.rollout_epsilon = rollout_epsilon
         self.action_space_size = env.action_space.n # get the #of actions from the given environment 
-        self.holes = {5, 7, 11, 12}
-        self.goal_state = 15
 
     def is_terminal(self, state):
-        if state == self.goal_state:
+        if state == 15: 
             return True
-        return state in self.holes or state == self.goal_state
-
-    def _state_to_row_col(self, state):
-        return divmod(state, 4)
-
-    def _is_adjacent_to_hole(self, state):
-        row, col = self._state_to_row_col(state)
-        for hole in self.holes:
-            hole_row, hole_col = self._state_to_row_col(hole)
-            if abs(row - hole_row) + abs(col - hole_col) == 1:
-                return True
-        return False
-
-    def _heuristic_score(self, next_state, done):
-        if done:
-            if next_state == self.goal_state:
-                return 100.0
-            return -100.0
-
-        row, col = self._state_to_row_col(next_state)
-        goal_row, goal_col = self._state_to_row_col(self.goal_state)
-        manhattan_distance = abs(goal_row - row) + abs(goal_col - col)
-
-        score = -manhattan_distance
-        if self._is_adjacent_to_hole(next_state):
-            score -= 2.0
-        return score
-
-    def _greedy_rollout_action(self, state):
-        best_action = None
-        best_score = float("-inf")
-
-        for action in range(self.action_space_size):
-            transitions = self.env.unwrapped.P[state][action]
-            expected_score = 0.0
-            for probability, next_state, reward, done in transitions:
-                expected_score += probability * self._heuristic_score(next_state, done)
-
-            if expected_score > best_score:
-                best_score = expected_score
-                best_action = action
-
-        return best_action
+        holes = {5, 7, 11, 12} 
+        return state in holes or state == 15
 
     def search(self, initial_state):
         root = DecisionNode(state=initial_state) # initialize the root node with the initial state
@@ -164,8 +120,8 @@ class MCTS:
 
         for _ in range(self.iterations):
             node = self._select(root)
-            reward, outcome = self._simulate(node.state)
-            self._backpropagate(node, reward, outcome)
+            reward, _ = self._simulate(node.state)
+            self._backpropagate(node, reward)
 
         return root.best_child(c_param=0)
 
@@ -232,10 +188,7 @@ class MCTS:
         outcome = 'timeout'
 
         while not done and depth < max_depth:
-            if random.random() < self.rollout_epsilon:
-                action = self.env.action_space.sample()
-            else:
-                action = self._greedy_rollout_action(current_state)
+            action = self.env.action_space.sample() # get action from the environment action space
             next_state, reward, done, truncated, _ = self.env.step(action)
 
             if done:
@@ -243,7 +196,7 @@ class MCTS:
                     total_rewards += 1.0
                     outcome = 'success'
                 else:
-                    total_rewards += -1.0
+                    total_rewards += -0.5
                     outcome = 'hole'
                 break
             
@@ -256,16 +209,24 @@ class MCTS:
 
         return total_rewards, outcome
 
-    def _backpropagate(self, node, reward, outcome):
+    def _backpropagate(self, node, reward):
         # Backpropagation
+        # Only count success/failure when the leaf node itself is a terminal state in the tree
+        leaf_state = node.state
+        if leaf_state == 15:
+            tree_outcome = 'success'
+        elif leaf_state in {5, 7, 11, 12}:
+            tree_outcome = 'hole'
+        else:
+            tree_outcome = None  # simulation ended outside the tree — don't record
+
         while node is not None:
             node.visits += 1
             node.value += reward
 
-            # update success and failure counts for better explanation
-            if outcome == 'success':
+            if tree_outcome == 'success':
                 node.success += 1
-            elif outcome == 'hole':
+            elif tree_outcome == 'hole':
                 node.failure += 1
 
             node = node.parent # move up to the parent node
@@ -298,11 +259,11 @@ if __name__ == "__main__":
     while not (done or truncated):
         action = mcts.search(obs) # Get the best action from the MCTS on the current state
 
-        # # save the mcts tree after each step to a json file for visualization
-        # tree_data = mcts.root.to_dict(current_depth=0, max_depth=4)
-        # with open(f"{folder_name}/mcts_tree_step_{step}.json", "w") as f:
-        #     json.dump(tree_data, f, indent=4, ensure_ascii=False)
-        # print(f"Saved MCTS tree for step {step} to {folder_name}/mcts_tree_step_{step}.json")
+        # save the mcts tree after each step to a json file for visualization
+        tree_data = mcts.root.to_dict(current_depth=0, max_depth=4)
+        with open(f"{folder_name}/mcts_tree_step_{step}.json", "w") as f:
+            json.dump(tree_data, f, indent=4, ensure_ascii=False)
+        print(f"Saved MCTS tree for step {step} to {folder_name}/mcts_tree_step_{step}.json")
 
         obs, reward, done, truncated, info = real_env.step(action) # Take the action
         step += 1 

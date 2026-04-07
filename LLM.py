@@ -21,40 +21,35 @@ def prompt(mcts_json_data):
             Moving adjacent to holes (indices 5, 7, 11, 12) carries a massive risk of sliding in.
         REWARD FORMULATION:
             - Reaching the Goal (15) = +1.0
-            - Falling into a Hole (5, 7, 11, 12) = -1.0
+            - Falling into a Hole (5, 7, 11, 12) = -0.5
             - Time Penalty = -0.01 per step (penalizes infinite wandering)
         DATA DICTIONARY:
             - Action: The direction the agent attempted to move (0=Left, 1=Down, 2=Right, 3=Up).
             - State: The current position of the agent on the 4x4 grid (0-15).
             - Value: The expected return (average score) of an action across all simulations.
             - Visits: Total mental simulations for this action.
-            - Successes / Holes: count of simulation outcomes for this action.
+            - Successes / Holes: count of times the tree walk landed on Goal (15) or a Hole (5, 7, 11, 12) — simulation rollouts are NOT counted.
             - Children: The child nodes represent possible future states.
 
             - Action Data Block (saved as Chance Node): This represents the agent's intended move. The statistics inside this block (Value, Holes, Visits) calculate the total average of all possible outcomes, including the 2/3 chance the agent slides off course.
+            - Decision Rule: The agent selects the action with the highest average score (Value / Visits). This is pure exploitation (no exploration bonus) at decision time. A higher (less negative) average value means that action led to better outcomes across all simulations.
+            - UCB Formula (used during tree search, NOT at decision time): UCB = (Value / Visits) + √2 * sqrt(ln(parent_visits) / visits), where √2 ≈ 1.4142 is the exploration constant.
+            - Successes / Holes: count of times the tree walk itself landed on the Goal (state 15) or a Hole state (5, 7, 11, 12). Simulation rollouts are NOT counted — only confirmed in-tree terminal states.
     """
 
     user_prompt = f"""
     Analyze the following single-step MCTS JSON data and generate a brief decision report. You need to give intuitive metrics for users to understand the decision:
 
-   DATA DICTIONARY & LOGIC RULES (CRITICAL):
-        The JSON provided contains statistics from simulations (rollouts). You MUST process the data using the following logic before generating your report:
+    REQUIRED INTUITIVE METRICS:
+    1. Risk Rate: Calculate (holes / visits * 100) as a percentage.
+    2. Safety Score: Translate the raw 'Value' into a categorical label (e.g., "High Risk", "Safe", "Optimal").
+    3. Time Efficiency: If an action has 0 holes but a low or negative Value, explain it as a time-wasting penalty (-0.01/step) rather than a fatal risk.
 
-        1. Immediate Action Risk (Cross-reference the Map): 
-        Do NOT use the 'failure' count to judge immediate risk. Instead, look at the starting 'state'. If the current state is NOT physically adjacent to a hole (5, 7, 11, 12), that means the immediate physical risk of taking this action is 0%. 
 
-        2. Environment Harshness (Redefining 'failure'): 
-        The 'failure' count reflects the number of times the agent fell into a hole during FUTURE random wandering in the simulation. The high failure rates reflect "long-term exploration difficulty due to the slippery ice," it is NOT a mistake in the current chosen action.
-
-        3. Path Quality (Average Reward): 
-        Calculate the 'Average Reward' internally by dividing 'value' by 'visits'. 
-        - A score near -1.0 means the path is highly lethal.
-        - A score between 0.0 and -0.99 means the path is "Safe but Contextually Difficult." Explain that negative scores here are driven by time penalties (-0.01 per step) and future slipping, making it the least bad option.
-
-        REPORT STRUCTURE (Under 200 words, clear, non-technical style):
-        - Core Decision: What action was chosen.
-        - Immediate Safety: Explain why the move is safe or not safe right now based on the map (Rule 1).
-        - Long-Term Difficulty: Address the high failure numbers in the data, explaining them as environmental harshness rather than action risk (Rule 2 & 3).
+    REPORT STRUCTURE (Under 200 words total in a clear, non-technical style):
+        - Core Decision: What action was chosen and why.
+        - Risk Avoidance: Why seemingly closer but riskier actions were rejected (reference the 2/3 slipperiness).
+        - Data Justification: Use the Intuitive Metrics calculated above to back up the decision.
 
         INPUT JSON DATA:
         {json.dumps(mcts_json_data, indent=2)}
@@ -76,8 +71,8 @@ if __name__ == "__main__":
     client = OpenAI(api_key=os.getenv("GROQ_API_KEY"), 
                 base_url="https://api.groq.com/openai/v1")
     
-    # json_file = 'mcts_trees_ver2/mcts_tree_step_0.json'
-    json_file = 'mcts_trees_ver2/mcts_tree_step_12.json'
+    json_file = 'mcts_trees_ver2/mcts_tree_step_1.json'
+    # json_file = 'mcts_trees_ver2/mcts_tree_step_13.json'
     with open(json_file, 'r') as f:
         json_data = json.load(f)
 
