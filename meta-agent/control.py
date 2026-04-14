@@ -40,17 +40,21 @@ if __name__ == "__main__":
         base_url="https://api.groq.com/openai/v1"
     )
 
+    json_path = os.path.join(os.path.dirname(__file__), "mcts_tree_step_9.json")
+    with open(json_path, "r") as f:
+        mcts_json_data = json.load(f)
+
     # Step 1: user question (hardcoded)
-    # user_question = "why did the agent choose this action over the others at the current state?" # general question, should be answerable
+    user_question = "why did the agent choose this action over the others at the current state?" # general question, should be answerable
     # user_question = "What happens if the agent is at state 13 and goes up?"
     # user_question = "What happens if the agent is at state 13 and goes left?" # not answerable, needs expansion
     # user_question = "What happens if the agent is at state 13 and goes down?"
-    user_question = input("Enter your question here: ")
+    # user_question = input("Enter your question here: ")
 
     print(f"Question: {user_question}\n")
 
     # Step 2: extract intent
-    intent = extractor.extract_intent(client, user_question)
+    intent = extractor.extract_intent(client, user_question, mcts_json_data=mcts_json_data)
     print(f"Intent: {intent}\n")
 
     # Step 3: load tree and check if answerable
