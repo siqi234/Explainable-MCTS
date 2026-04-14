@@ -32,6 +32,8 @@ from dotenv import load_dotenv
 
 TREE_FILE     = os.path.join(os.path.dirname(__file__), "mcts_tree_step_9_modified.json")
 EXPANDED_FILE = os.path.join(os.path.dirname(__file__), "mcts_tree_step_9_expanded.json")
+with open(TREE_FILE, "r") as f:
+    TREE_FILE_DATA = json.load(f)
 
 if __name__ == "__main__":
     load_dotenv()
@@ -39,10 +41,6 @@ if __name__ == "__main__":
         api_key=os.getenv("GROQ_API_KEY"),
         base_url="https://api.groq.com/openai/v1"
     )
-
-    json_path = os.path.join(os.path.dirname(__file__), "mcts_tree_step_9.json")
-    with open(json_path, "r") as f:
-        mcts_json_data = json.load(f)
 
     # Step 1: user question (hardcoded)
     user_question = "why did the agent choose this action over the others at the current state?" # general question, should be answerable
@@ -54,7 +52,7 @@ if __name__ == "__main__":
     print(f"Question: {user_question}\n")
 
     # Step 2: extract intent
-    intent = extractor.extract_intent(client, user_question, mcts_json_data=mcts_json_data)
+    intent = extractor.extract_intent(client, user_question, mcts_json_data=TREE_FILE_DATA)
     print(f"Intent: {intent}\n")
 
     # Step 3: load tree and check if answerable
