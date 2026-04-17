@@ -34,8 +34,10 @@ def find_path_to_state(node, target_state):
 
 def graft_and_backpropagate(tree, target_state, target_action, new_subtree):
     """
-    Finds target_state in the tree, grafts new_subtree as its child at target_action,
-    then backpropagates the delta stats (visits/value/success/failure) up to root.
+    Finds target_state in the tree, then either:
+      - grafts new_subtree as a new child (action did not exist), or
+      - merges new_subtree stats into the existing child (action existed but undervisited).
+    Backpropagates the delta stats up to root in both cases.
     """
     path = find_path_to_state(tree, target_state)
     if path is None:
@@ -44,29 +46,35 @@ def graft_and_backpropagate(tree, target_state, target_action, new_subtree):
 
     target_node = path[-1]
 
-    if str(target_action) in target_node.get('children', {}):
-        print(f"[expander] Action {target_action} already exists at state {target_state}. Skipping graft.")
-        return False
-
-    # Graft the new subtree
     if not isinstance(target_node.get('children'), dict):
         target_node['children'] = {}
-    target_node['children'][str(target_action)] = new_subtree
 
-    # Delta = the new subtree's total accumulated stats
-    delta_visits  = new_subtree['visits']
-    delta_value   = new_subtree['value']
-    delta_success = new_subtree.get('success', 0)
-    delta_failure = new_subtree.get('failure', 0)
+    existing = target_node['children'].get(str(target_action))
 
-    # Backpropagate delta to every ancestor on the path (root → target_node inclusive).
-    # This mirrors _backpropagate: every simulation that ran through the new subtree
-    # would have incremented each ancestor once.
+    if existing is None:
+        # Action branch is completely missing — graft as new child
+        target_node['children'][str(target_action)] = new_subtree
+        delta_visits  = new_subtree['visits']
+        delta_value   = new_subtree['value']
+        delta_success = new_subtree.get('success', 0)
+        delta_failure = new_subtree.get('failure', 0)
+    else:
+        # Action exists but had insufficient visits — merge new stats in (叠加)
+        delta_visits  = new_subtree['visits']
+        delta_value   = new_subtree['value']
+        delta_success = new_subtree.get('success', 0)
+        delta_failure = new_subtree.get('failure', 0)
+        existing['visits']  += delta_visits
+        existing['value']   += delta_value
+        existing['success'] = existing.get('success', 0) + delta_success
+        existing['failure'] = existing.get('failure', 0) + delta_failure
+
+    # Backpropagate delta up through every ancestor to root
     for node in path:
         node['visits']  += delta_visits
         node['value']   += delta_value
-        node['success'] += delta_success
-        node['failure'] += delta_failure
+        node['success'] = node.get('success', 0) + delta_success
+        node['failure'] = node.get('failure', 0) + delta_failure
 
     return True
 

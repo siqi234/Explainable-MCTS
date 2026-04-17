@@ -1,6 +1,6 @@
 import json
 
-MIN_VISITS = 10  # minimum visits to consider a node "reliably searched"
+MIN_VISITS = 50  # minimum visits to consider a node "reliably searched"
 
 
 def find_node(tree: dict, target_state: int) -> dict | None:
