@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from tqdm import tqdm
 
+import sys
+sys.path.insert(0, "meta-agent")
 # --- Getting the MCTS implementation from the debugging versions --- 
 from mcts_from_scratch_ver2 import MCTS, DecisionNode, ChanceNode
 # from mcts_from_scratch_ver2_debug import MCTS, DecisionNode, ChanceNode
