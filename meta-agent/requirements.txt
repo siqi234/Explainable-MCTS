@@ -1,4 +1,5 @@
 streamlit
-gymnasium
+gymnasium[toy-text]
 openai
 python-dotenv
+pygame
