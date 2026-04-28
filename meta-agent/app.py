@@ -20,8 +20,26 @@ load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 ACTIONS = {0: "← Left", 1: "↓ Down", 2: "→ Right", 3: "↑ Up"}
 TREE_FOLDER = os.path.join(os.path.dirname(__file__), "mcts_trees_live")
 EXPANDED_FILE = os.path.join(os.path.dirname(__file__), "mcts_tree_expanded.json")
+SURVEY_FILE = os.path.join(os.path.dirname(__file__), "survey_responses.json")
 
 os.makedirs(TREE_FOLDER, exist_ok=True)
+
+
+def save_survey(mcts_level: str, fl_level: str):
+    import datetime
+    record = {
+        "timestamp": datetime.datetime.now().isoformat(),
+        "mcts_familiarity": mcts_level,
+        "frozen_lake_familiarity": fl_level,
+    }
+    if os.path.exists(SURVEY_FILE):
+        with open(SURVEY_FILE) as f:
+            data = json.load(f)
+    else:
+        data = []
+    data.append(record)
+    with open(SURVEY_FILE, "w") as f:
+        json.dump(data, f, indent=2)
 
 
 def make_client():
@@ -52,8 +70,56 @@ def init_game():
     st.session_state.game_result = None
 
 
+FAMILIARITY = [
+    "Not at all familiar",
+    "Slightly familiar",
+    "Moderately familiar",
+    "Very familiar",
+    "Extremely familiar",
+]
+
 # ── Page setup ───────────────────────────────────────────────────────────────
 st.set_page_config(page_title="FrozenLake MCTS", layout="wide")
+
+# ── Survey overlay (shown after Start New Game if not yet completed) ──────────
+if st.session_state.get("showing_survey"):
+    st.title("Before You Start")
+    st.markdown("Please answer two quick questions so we can understand your background.")
+    st.markdown("---")
+
+    st.markdown("""
+    <style>
+    div[data-testid="stRadio"] label { font-size: 1.15rem !important; }
+    div[data-testid="stRadio"] > label { font-size: 1.25rem !important; font-weight: 600; }
+    </style>
+    """, unsafe_allow_html=True)
+
+    mcts_level = st.radio(
+        "How familiar are you with **Monte Carlo Tree Search (MCTS)**?",
+        FAMILIARITY,
+        index=None,
+    )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    fl_level = st.radio(
+        "How familiar are you with the **Frozen Lake** environment?",
+        FAMILIARITY,
+        index=None,
+    )
+
+    if st.button("Continue to Game", disabled=(mcts_level is None or fl_level is None)):
+        save_survey(mcts_level, fl_level)
+        st.session_state.survey_done = True
+        st.session_state.survey_mcts = mcts_level
+        st.session_state.survey_frozen_lake = fl_level
+        st.session_state.showing_survey = False
+        init_game()
+        st.rerun()
+
+    st.stop()
+
+# ── Game UI ───────────────────────────────────────────────────────────────────
 st.title("🧊 FrozenLake — MCTS Agent")
 st.caption("Take each step manually, then ask the agent anything about its decision.")
 
@@ -89,8 +155,12 @@ with left:
     btn_cols = st.columns(2)
 
     if btn_cols[0].button("🔄 Start New Game", use_container_width=True):
-        init_game()
-        st.rerun()
+        if not st.session_state.get("survey_done"):
+            st.session_state.showing_survey = True
+            st.rerun()
+        else:
+            init_game()
+            st.rerun()
 
     if game_ready and not (st.session_state.done or st.session_state.truncated):
         if btn_cols[1].button("▶️ Next Step", use_container_width=True):
