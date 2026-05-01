@@ -1,0 +1,521 @@
+[
+  {
+    "id": "Q01",
+    "tree_file": "trees/frozenlake_seed1_step0.json",
+    "question": "Why did the agent choose Right at state 0?",
+    "question_type": "node",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": 0,
+      "target_action": "Right",
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "selected action",
+      "visit count",
+      "estimated value",
+      "comparison with alternative actions"
+    ]
+  },
+  {
+    "id": "Q02",
+    "tree_file": "trees/frozenlake_seed1_step0.json",
+    "question": "Why did the agent choose Right instead of Down at state 0?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": 0,
+      "target_action": "Right",
+      "alternative_action": "Down",
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "selected action value",
+      "alternative action value",
+      "visit count comparison",
+      "transition risk comparison"
+    ]
+  },
+  {
+    "id": "Q03",
+    "tree_file": "trees/frozenlake_seed1_step0.json",
+    "question": "What would happen if the agent chose Down at state 0?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": 0,
+      "target_action": "Down",
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "state": 0,
+      "action": "Down"
+    },
+    "expected_evidence": [
+      "expanded branch",
+      "estimated value after expansion",
+      "transition outcomes after expansion",
+      "comparison with selected action"
+    ]
+  },
+  {
+    "id": "Q04",
+    "tree_file": "trees/frozenlake_seed1_step1.json",
+    "question": "Why did the agent prefer Right at state 2?",
+    "question_type": "node",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": 2,
+      "target_action": "Right",
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "selected action",
+      "estimated value",
+      "visit count",
+      "nearby transition risk"
+    ]
+  },
+  {
+    "id": "Q05",
+    "tree_file": "trees/frozenlake_seed1_step1.json",
+    "question": "Why did the agent choose Right instead of Left at state 2?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": 2,
+      "target_action": "Right",
+      "alternative_action": "Left",
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "state": 2,
+      "action": "Left"
+    },
+    "expected_evidence": [
+      "alternative action after expansion",
+      "value comparison",
+      "visit count comparison",
+      "transition risk"
+    ]
+  },
+  {
+    "id": "Q06",
+    "tree_file": "trees/frozenlake_seed2_step1.json",
+    "question": "Why does the agent avoid moving Right at state 4?",
+    "question_type": "node",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": 4,
+      "target_action": "Right",
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "risk of hole state",
+      "low estimated value",
+      "transition outcome",
+      "safer alternative action"
+    ]
+  },
+  {
+    "id": "Q07",
+    "tree_file": "trees/frozenlake_seed2_step2.json",
+    "question": "What would happen if the agent moved Up at state 6?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": 6,
+      "target_action": "Up",
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "state": 6,
+      "action": "Up"
+    },
+    "expected_evidence": [
+      "expanded branch",
+      "new visit count",
+      "estimated value after expansion",
+      "transition outcomes"
+    ]
+  },
+  {
+    "id": "Q08",
+    "tree_file": "trees/frozenlake_seed2_step3.json",
+    "question": "Why does the agent choose Right at state 10?",
+    "question_type": "node",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": 10,
+      "target_action": "Right",
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "selected action",
+      "estimated value",
+      "visit count",
+      "proximity to goal or risk"
+    ]
+  },
+  {
+    "id": "Q09",
+    "tree_file": "trees/frozenlake_seed3_step0.json",
+    "question": "Why is the path 0 to 1 to 2 to 6 considered promising?",
+    "question_type": "path",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": [0, 1, 2, 6],
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "path states exist in tree",
+      "node values along path",
+      "transition outcomes",
+      "risk along path"
+    ]
+  },
+  {
+    "id": "Q10",
+    "tree_file": "trees/frozenlake_seed3_step0.json",
+    "question": "Why is the path 0 to 1 to 2 safer than the path 0 to 4?",
+    "question_type": "path",
+    "question_form": "contrastive",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": [0, 1, 2],
+      "alternative_path": [0, 4],
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "path value comparison",
+      "transition risk comparison",
+      "nearby hole risk",
+      "visit count along paths"
+    ]
+  },
+  {
+    "id": "Q11",
+    "tree_file": "trees/frozenlake_seed3_step1.json",
+    "question": "What would happen if the agent followed the path 0 to 4 to 8?",
+    "question_type": "path",
+    "question_form": "counterfactual",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": [0, 4, 8],
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "path": [0, 4, 8]
+    },
+    "expected_evidence": [
+      "expanded path",
+      "values along expanded path",
+      "transition outcomes",
+      "risk comparison with current path"
+    ]
+  },
+  {
+    "id": "Q12",
+    "tree_file": "trees/frozenlake_seed3_step2.json",
+    "question": "Why does the agent continue from state 6 toward state 10?",
+    "question_type": "path",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": [6, 10],
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "path transition",
+      "estimated value of next state",
+      "visit count",
+      "risk of alternative transitions"
+    ]
+  },
+  {
+    "id": "Q13",
+    "tree_file": "trees/frozenlake_seed4_step0.json",
+    "question": "Why does the agent prefer the path 0 to 1 to 2 over the path 0 to 4 to 8?",
+    "question_type": "path",
+    "question_form": "contrastive",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": [0, 1, 2],
+      "alternative_path": [0, 4, 8],
+      "target_region": null
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "path": [0, 4, 8]
+    },
+    "expected_evidence": [
+      "expanded alternative path",
+      "path value comparison",
+      "transition risk comparison",
+      "visit count comparison"
+    ]
+  },
+  {
+    "id": "Q14",
+    "tree_file": "trees/frozenlake_seed4_step1.json",
+    "question": "What would happen if the agent followed the path 2 to 6 to 7?",
+    "question_type": "path",
+    "question_form": "counterfactual",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": [2, 6, 7],
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "path": [2, 6, 7]
+    },
+    "expected_evidence": [
+      "expanded path",
+      "terminal failure risk",
+      "transition outcomes",
+      "comparison with safer path"
+    ]
+  },
+  {
+    "id": "Q15",
+    "tree_file": "trees/frozenlake_seed5_step0.json",
+    "question": "What is the agent's general strategy in this map?",
+    "question_type": "general",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "high-value branches",
+      "avoided risky states",
+      "preferred actions",
+      "overall path tendency"
+    ]
+  },
+  {
+    "id": "Q16",
+    "tree_file": "trees/frozenlake_seed5_step0.json",
+    "question": "Why does the agent avoid states near holes?",
+    "question_type": "general",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": "near holes"
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "hole states",
+      "low-value risky branches",
+      "transition risk",
+      "safer alternatives"
+    ]
+  },
+  {
+    "id": "Q17",
+    "tree_file": "trees/frozenlake_seed5_step1.json",
+    "question": "Why does the agent prefer a safer route instead of a shorter route?",
+    "question_type": "general",
+    "question_form": "contrastive",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "risk comparison",
+      "expected value comparison",
+      "transition uncertainty",
+      "chosen safer branch"
+    ]
+  },
+  {
+    "id": "Q18",
+    "tree_file": "trees/frozenlake_seed6_step0.json",
+    "question": "What would happen if the agent explored the lower-left region more?",
+    "question_type": "general",
+    "question_form": "counterfactual",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": "lower-left"
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "region": "lower-left"
+    },
+    "expected_evidence": [
+      "expanded region",
+      "newly visited states",
+      "value estimates in region",
+      "risk comparison"
+    ]
+  },
+  {
+    "id": "Q19",
+    "tree_file": "trees/frozenlake_seed6_step1.json",
+    "question": "Why does the agent repeatedly favor actions with higher visit counts?",
+    "question_type": "general",
+    "question_form": "factual",
+    "answerable": true,
+    "requires_expansion": false,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": null
+    },
+    "expected_detector_output": "answerable",
+    "expansion_target": null,
+    "expected_evidence": [
+      "visit count distribution",
+      "estimated value distribution",
+      "action selection pattern",
+      "search preference"
+    ]
+  },
+  {
+    "id": "Q20",
+    "tree_file": "trees/frozenlake_seed6_step1.json",
+    "question": "What would happen if the agent explored the lower-right region before moving toward the goal?",
+    "question_type": "general",
+    "question_form": "counterfactual",
+    "answerable": false,
+    "requires_expansion": true,
+    "expected_intent": {
+      "target_state": null,
+      "target_action": null,
+      "alternative_action": null,
+      "target_path": null,
+      "alternative_path": null,
+      "target_region": "lower-right"
+    },
+    "expected_detector_output": "needs_expansion",
+    "expansion_target": {
+      "region": "lower-right"
+    },
+    "expected_evidence": [
+      "expanded region",
+      "transition risk",
+      "nearby hole states",
+      "comparison with original strategy"
+    ]
+  }
+]
