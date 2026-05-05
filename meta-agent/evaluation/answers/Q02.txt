@@ -1,0 +1,15 @@
+**Core Decision:** 
+The current action chosen is moving down (action_id: 1) at state 14. This decision is made based on the highest average score (Value / Visits) among all possible actions.
+
+**Risk Avoidance:** 
+Seemingly closer but riskier actions, such as moving left (action_id: 0) or right (action_id: 2), are rejected due to the high risk of sliding into holes (states 5, 7, 11, 12) caused by the 2/3 slipperiness of the ice. The agent prioritizes safety over proximity to the goal.
+
+**Data Justification:** 
+To justify this decision, we calculate the intuitive metrics for each action:
+
+* For action_id: 1 (moving down), the Risk Rate is (53 / 276 * 100) = 19.2%, and the Safety Score is "Safe" (Value: 56.22, indicating a relatively low risk of falling into holes).
+* For action_id: 0 (moving left), the Risk Rate is (8 / 28 * 100) = 28.6%, and the Safety Score is "High Risk" (Value: -8.02, indicating a higher risk of falling into holes).
+* For action_id: 2 (moving right), the Risk Rate is (88 / 524 * 100) = 16.8%, and the Safety Score is "Optimal" (Value: 148.5, indicating a low risk of falling into holes and a high chance of reaching the goal).
+* For action_id: 3 (moving up), the Risk Rate is (41 / 172 * 100) = 23.8%, and the Safety Score is "Safe" (Value: 23.94, indicating a relatively low risk of falling into holes).
+
+Although moving right (action_id: 2) has the highest Safety Score, the chosen action (moving down, action_id: 1) is selected due to its relatively high Value and lower Risk Rate compared to moving left (action_id: 0) or up (action_id: 3). The Time Efficiency of moving down is also reasonable, as it does not result in a significant time-wasting penalty.

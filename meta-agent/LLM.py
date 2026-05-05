@@ -32,43 +32,46 @@ ENVIRONMENTAL PHYSICS/SLIPPERINESS:
     The agent is on a 4x4 Frozen Lake. The ice is slippery.
     When the agent attempts to move in a direction, there is only a 1/3 chance it moves in that intended direction.
     There is a 2/3 chance it slides uncontrollably to the perpendicular sides. It cannot slide backwards.
-    Moving adjacent to holes (indices 5, 7, 11, 12) carries a massive risk of sliding in.
+    Moving adjacent to danger zones (states 5, 7, 11, 12) carries a massive risk of sliding in.
 
 REWARD FORMULATION:
-    - Reaching the Goal (15) = +1.0
-    - Falling into a Hole (5, 7, 11, 12) = -0.5
+    - Reaching the Goal (state 15) = +1.0
+    - Falling into a danger zone (states 5, 7, 11, 12) = -0.5
     - Time Penalty = -0.01 per step (penalizes infinite wandering)
 
 DATA DICTIONARY:
     - Action: The direction the agent attempted to move (0=Left, 1=Down, 2=Right, 3=Up).
     - State: The current position of the agent on the 4x4 grid (0-15).
-    - Value: The expected return (average score) of an action across all simulations.
-    - Visits: Total mental simulations for this action.
-    - Successes / Holes: count of times the tree walk landed on Goal (15) or a Hole (5, 7, 11, 12), simulation rollouts are NOT counted.
-    - Children: The child nodes represent possible future states.
+    - Value: The cumulative total return summed across all simulations for this action. It is NOT an average.
+    - Average Value: Value / Visits — the true per-simulation expected return. This is what the agent uses to compare actions.
+    - Visits: Total number of simulations run through this action.
+    - Success: Number of times the tree walk reached the Goal (state 15). Simulation rollouts are NOT counted.
+    - Failure: Number of times the tree walk landed on a danger zone (states 5, 7, 11, 12). Simulation rollouts are NOT counted.
+    - Children: The child nodes represent possible future states after the action is taken.
 
-    - Action Data Block (saved as Chance Node): This represents the agent's intended move. The statistics inside this block (Value, Holes, Visits) calculate the total average of all possible outcomes, including the 2/3 chance the agent slides off course.
-    - Decision Rule: The agent selects the action with the highest average score (Value / Visits). This is pure exploitation (no exploration bonus) at decision time. A higher (less negative) average value means that the action led to better outcomes across all simulations.
-    - UCB Formula (used during tree search phase, NOT at decision time): UCB = (Value / Visits) + √2 * sqrt(ln(parent_visits) / visits), where √2 ≈ 1.4142 is the exploration constant.
-    - Successes / Holes: count of times the tree walk itself landed on the Goal (state 15) or a Hole state (5, 7, 11, 12). Simulation rollouts are NOT counted."""
+    - Action Data Block (Chance Node): Represents the agent's intended move. All statistics (Value, Visits, Success, Failure) aggregate outcomes across all possible slip outcomes, including the 2/3 chance the agent slides off course.
+    - Decision Rule: At decision time the agent selects the action with the highest Average Value (Value / Visits). This is pure exploitation — no exploration bonus. A higher (less negative) average value means better expected outcomes.
+    - UCB Formula (used during tree search to balance exploration vs exploitation, NOT at decision time):
+      UCB = (Value / Visits) + √2 × sqrt(ln(parent_visits) / visits)
+      The exploration term √2 × sqrt(ln(parent_visits) / visits) encourages the agent to try less-visited actions during search. At decision time this term is dropped and only Average Value matters."""
 
-    user_prompt = f"""Analyze the following single-step MCTS JSON data and generate a brief decision report. You need to give intuitive metrics for users to understand the decision:
-
-REQUIRED INTUITIVE METRICS:
-    1. Risk Rate: Calculate (holes / visits * 100) as a percentage.
-    2. Safety Score: Translate the raw 'Value' into a categorical label (e.g., "High Risk", "Safe", "Optimal").
-    3. Time Efficiency: If an action has 0 holes but a low or negative Value, explain it as a time-wasting penalty (-0.01/step) rather than a fatal risk.
-
-REPORT STRUCTURE (Under 200 words total in a clear, non-technical style):
-    - Core Decision: What action was chosen and why.
-    - Risk Avoidance: Why seemingly closer but riskier actions were rejected (reference the 2/3 slipperiness).
-    - Data Justification: Use the Intuitive Metrics calculated above to back up the decision.
-
-INPUT JSON DATA:
-{json.dumps(mcts_json_data, indent=2)}
+    user_prompt = f"""Analyze the following MCTS JSON data and answer the user's question with a brief decision report.
 
 USER QUESTION:
-{user_question}"""
+{user_question}
+
+REQUIRED INTUITIVE METRICS (always compute and include these):
+    1. Risk Rate: (failure / visits) × 100, expressed as a percentage. Compute this for every action discussed.
+    2. Safety Score: Translate Average Value (Value / Visits) into a categorical label (e.g., "High Risk", "Moderate", "Safe", "Optimal") based on your judgment of the scale.
+    3. Time Efficiency: If an action has 0 failures but a low or negative Average Value, explain it as a time-wasting penalty (-0.01/step) rather than a fatal risk.
+
+REPORT STRUCTURE (under 250 words, clear non-technical style, directly addressing the user question above):
+    - Core Decision: What action was chosen at what state and why (use Average Value to justify).
+    - Risk Avoidance: Why seemingly closer or alternative actions were rejected (reference Risk Rate and the 2/3 slipperiness).
+    - Data Justification: Back up the explanation with the computed Intuitive Metrics.
+
+INPUT JSON DATA:
+{json.dumps(mcts_json_data, indent=2)}"""
 
     messages = [
         {"role": "system", "content": system_prompt},

@@ -1,0 +1,1583 @@
+[
+  {
+    "id": "Q01",
+    "question": "Why did the agent choose Up at the current state?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_0.json",
+    "tree_root_state": 0,
+    "target_state": 0,
+    "target_action_asked": 3,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 258,
+        "value": -168.26,
+        "avg_value": -0.6522,
+        "success": 0,
+        "failure": 64,
+        "risk_rate": 24.81
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 255,
+        "value": -166.77999999999994,
+        "avg_value": -0.654,
+        "success": 0,
+        "failure": 64,
+        "risk_rate": 25.1
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 243,
+        "value": -159.80000000000013,
+        "avg_value": -0.6576,
+        "success": 0,
+        "failure": 63,
+        "risk_rate": 25.93
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 244,
+        "value": -160.67000000000007,
+        "avg_value": -0.6585,
+        "success": 0,
+        "failure": 69,
+        "risk_rate": 28.28
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 258,
+      "value": -168.26,
+      "avg_value": -0.6522,
+      "success": 0,
+      "failure": 64,
+      "risk_rate": 24.81
+    },
+    "asked_action_stats": {
+      "code": 3,
+      "name": "Up",
+      "visits": 255,
+      "value": -166.77999999999994,
+      "avg_value": -0.654,
+      "success": 0,
+      "failure": 64,
+      "risk_rate": 25.1
+    }
+  },
+  {
+    "id": "Q02",
+    "question": "Why is the current action chosen over the alternatives at state 14?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_33.json",
+    "tree_root_state": 14,
+    "target_state": 14,
+    "target_action_asked": 2,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 524,
+        "value": 148.49999999999997,
+        "avg_value": 0.2834,
+        "success": 282,
+        "failure": 88,
+        "risk_rate": 16.79
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 276,
+        "value": 56.220000000000006,
+        "avg_value": 0.2037,
+        "success": 127,
+        "failure": 53,
+        "risk_rate": 19.2
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 172,
+        "value": 23.94,
+        "avg_value": 0.1392,
+        "success": 80,
+        "failure": 41,
+        "risk_rate": 23.84
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 28,
+        "value": -8.02,
+        "avg_value": -0.2864,
+        "success": 2,
+        "failure": 8,
+        "risk_rate": 28.57
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 524,
+      "value": 148.49999999999997,
+      "avg_value": 0.2834,
+      "success": 282,
+      "failure": 88,
+      "risk_rate": 16.79
+    },
+    "asked_action_stats": {
+      "code": 2,
+      "name": "Right",
+      "visits": 524,
+      "value": 148.49999999999997,
+      "avg_value": 0.2834,
+      "success": 282,
+      "failure": 88,
+      "risk_rate": 16.79
+    }
+  },
+  {
+    "id": "Q03",
+    "question": "Why does the agent prefer Down at the current state?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_29.json",
+    "tree_root_state": 9,
+    "target_state": 9,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 600,
+        "value": -307.51999999999964,
+        "avg_value": -0.5125,
+        "success": 43,
+        "failure": 257,
+        "risk_rate": 42.83
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 202,
+        "value": -126.66000000000007,
+        "avg_value": -0.627,
+        "success": 10,
+        "failure": 114,
+        "risk_rate": 56.44
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 102,
+        "value": -74.58,
+        "avg_value": -0.7312,
+        "success": 3,
+        "failure": 66,
+        "risk_rate": 64.71
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 96,
+        "value": -71.49000000000001,
+        "avg_value": -0.7447,
+        "success": 1,
+        "failure": 60,
+        "risk_rate": 62.5
+      }
+    ],
+    "chosen_action": {
+      "code": 1,
+      "name": "Down",
+      "visits": 600,
+      "value": -307.51999999999964,
+      "avg_value": -0.5125,
+      "success": 43,
+      "failure": 257,
+      "risk_rate": 42.83
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 600,
+      "value": -307.51999999999964,
+      "avg_value": -0.5125,
+      "success": 43,
+      "failure": 257,
+      "risk_rate": 42.83
+    }
+  },
+  {
+    "id": "Q04",
+    "question": "Why did the agent choose Up instead of Right at state 1?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "tree_file": "trees/mcts_tree_step_1.json",
+    "tree_root_state": 1,
+    "target_state": 1,
+    "target_action_asked": 3,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 390,
+        "value": -265.66000000000014,
+        "avg_value": -0.6812,
+        "success": 0,
+        "failure": 128,
+        "risk_rate": 32.82
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 227,
+        "value": -168.03000000000006,
+        "avg_value": -0.7402,
+        "success": 0,
+        "failure": 117,
+        "risk_rate": 51.54
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 191,
+        "value": -145.67000000000004,
+        "avg_value": -0.7627,
+        "success": 0,
+        "failure": 102,
+        "risk_rate": 53.4
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 192,
+        "value": -146.47000000000003,
+        "avg_value": -0.7629,
+        "success": 0,
+        "failure": 91,
+        "risk_rate": 47.4
+      }
+    ],
+    "chosen_action": {
+      "code": 3,
+      "name": "Up",
+      "visits": 390,
+      "value": -265.66000000000014,
+      "avg_value": -0.6812,
+      "success": 0,
+      "failure": 128,
+      "risk_rate": 32.82
+    },
+    "asked_action_stats": {
+      "code": 3,
+      "name": "Up",
+      "visits": 390,
+      "value": -265.66000000000014,
+      "avg_value": -0.6812,
+      "success": 0,
+      "failure": 128,
+      "risk_rate": 32.82
+    }
+  },
+  {
+    "id": "Q05",
+    "question": "Why did you choose action 1 instead of action 2 at the current state?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "tree_file": "trees/mcts_tree_step_29.json",
+    "tree_root_state": 9,
+    "target_state": 9,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 600,
+        "value": -307.51999999999964,
+        "avg_value": -0.5125,
+        "success": 43,
+        "failure": 257,
+        "risk_rate": 42.83
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 202,
+        "value": -126.66000000000007,
+        "avg_value": -0.627,
+        "success": 10,
+        "failure": 114,
+        "risk_rate": 56.44
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 102,
+        "value": -74.58,
+        "avg_value": -0.7312,
+        "success": 3,
+        "failure": 66,
+        "risk_rate": 64.71
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 96,
+        "value": -71.49000000000001,
+        "avg_value": -0.7447,
+        "success": 1,
+        "failure": 60,
+        "risk_rate": 62.5
+      }
+    ],
+    "chosen_action": {
+      "code": 1,
+      "name": "Down",
+      "visits": 600,
+      "value": -307.51999999999964,
+      "avg_value": -0.5125,
+      "success": 43,
+      "failure": 257,
+      "risk_rate": 42.83
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 600,
+      "value": -307.51999999999964,
+      "avg_value": -0.5125,
+      "success": 43,
+      "failure": 257,
+      "risk_rate": 42.83
+    }
+  },
+  {
+    "id": "Q06",
+    "question": "What would happen if the agent chose Left at the current state?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "tree_file": "trees/mcts_tree_step_9.json",
+    "tree_root_state": 13,
+    "target_state": 13,
+    "target_action_asked": 0,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -212.12000000000012,
+        "avg_value": -0.2882,
+        "success": 151,
+        "failure": 260,
+        "risk_rate": 35.33
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 118,
+        "value": -58.49,
+        "avg_value": -0.4957,
+        "success": 15,
+        "failure": 59,
+        "risk_rate": 50.0
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 88,
+        "value": -48.6,
+        "avg_value": -0.5523,
+        "success": 9,
+        "failure": 46,
+        "risk_rate": 52.27
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 58,
+        "value": -37.43,
+        "avg_value": -0.6453,
+        "success": 0,
+        "failure": 30,
+        "risk_rate": 51.72
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -212.12000000000012,
+      "avg_value": -0.2882,
+      "success": 151,
+      "failure": 260,
+      "risk_rate": 35.33
+    },
+    "asked_action_stats": {
+      "code": 0,
+      "name": "Left",
+      "visits": 58,
+      "value": -37.43,
+      "avg_value": -0.6453,
+      "success": 0,
+      "failure": 30,
+      "risk_rate": 51.72
+    }
+  },
+  {
+    "id": "Q07",
+    "question": "What would happen if the agent tried Down at the current state?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "tree_file": "trees/mcts_tree_step_20_fail.json",
+    "tree_root_state": 6,
+    "target_state": 6,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 345,
+        "value": -255.38999999999996,
+        "avg_value": -0.7403,
+        "success": 8,
+        "failure": 208,
+        "risk_rate": 60.29
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 330,
+        "value": -245.98000000000008,
+        "avg_value": -0.7454,
+        "success": 5,
+        "failure": 187,
+        "risk_rate": 56.67
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 182,
+        "value": -148.61,
+        "avg_value": -0.8165,
+        "success": 6,
+        "failure": 149,
+        "risk_rate": 81.87
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 143,
+        "value": -121.85000000000002,
+        "avg_value": -0.8521,
+        "success": 0,
+        "failure": 100,
+        "risk_rate": 69.93
+      }
+    ],
+    "chosen_action": {
+      "code": 0,
+      "name": "Left",
+      "visits": 345,
+      "value": -255.38999999999996,
+      "avg_value": -0.7403,
+      "success": 8,
+      "failure": 208,
+      "risk_rate": 60.29
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 182,
+      "value": -148.61,
+      "avg_value": -0.8165,
+      "success": 6,
+      "failure": 149,
+      "risk_rate": 81.87
+    }
+  },
+  {
+    "id": "Q08",
+    "question": "Why is the path through Down at state 14 considered the most reliable toward the goal?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_10.json",
+    "tree_root_state": 14,
+    "target_state": 14,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 485,
+        "value": 136.87,
+        "avg_value": 0.2822,
+        "success": 253,
+        "failure": 84,
+        "risk_rate": 17.32
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 412,
+        "value": 97.21999999999996,
+        "avg_value": 0.236,
+        "success": 212,
+        "failure": 92,
+        "risk_rate": 22.33
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 82,
+        "value": 0.2999999999999994,
+        "avg_value": 0.0037,
+        "success": 31,
+        "failure": 21,
+        "risk_rate": 25.61
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 21,
+        "value": -8.5,
+        "avg_value": -0.4048,
+        "success": 2,
+        "failure": 4,
+        "risk_rate": 19.05
+      }
+    ],
+    "chosen_action": {
+      "code": 1,
+      "name": "Down",
+      "visits": 485,
+      "value": 136.87,
+      "avg_value": 0.2822,
+      "success": 253,
+      "failure": 84,
+      "risk_rate": 17.32
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 485,
+      "value": 136.87,
+      "avg_value": 0.2822,
+      "success": 253,
+      "failure": 84,
+      "risk_rate": 17.32
+    }
+  },
+  {
+    "id": "Q09",
+    "question": "Why does the agent take the current path through Down at state 14?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_31.json",
+    "tree_root_state": 14,
+    "target_state": 14,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 509,
+        "value": 131.48999999999995,
+        "avg_value": 0.2583,
+        "success": 262,
+        "failure": 92,
+        "risk_rate": 18.07
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 429,
+        "value": 110.08999999999997,
+        "avg_value": 0.2566,
+        "success": 226,
+        "failure": 86,
+        "risk_rate": 20.05
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 37,
+        "value": -6.989999999999999,
+        "avg_value": -0.1889,
+        "success": 6,
+        "failure": 6,
+        "risk_rate": 16.22
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 25,
+        "value": -8.87,
+        "avg_value": -0.3548,
+        "success": 3,
+        "failure": 7,
+        "risk_rate": 28.0
+      }
+    ],
+    "chosen_action": {
+      "code": 1,
+      "name": "Down",
+      "visits": 509,
+      "value": 131.48999999999995,
+      "avg_value": 0.2583,
+      "success": 262,
+      "failure": 92,
+      "risk_rate": 18.07
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 509,
+      "value": 131.48999999999995,
+      "avg_value": 0.2583,
+      "success": 262,
+      "failure": 92,
+      "risk_rate": 18.07
+    }
+  },
+  {
+    "id": "Q10",
+    "question": "Why does going Right then Down from state 13 lead most reliably toward the goal?",
+    "question_type": "path",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_26.json",
+    "tree_root_state": 13,
+    "target_state": 13,
+    "target_action_asked": null,
+    "target_path_asked": [
+      2,
+      1
+    ],
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -187.3700000000001,
+        "avg_value": -0.2546,
+        "success": 160,
+        "failure": 259,
+        "risk_rate": 35.19
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 139,
+        "value": -62.030000000000015,
+        "avg_value": -0.4463,
+        "success": 16,
+        "failure": 69,
+        "risk_rate": 49.64
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 67,
+        "value": -39.48,
+        "avg_value": -0.5893,
+        "success": 1,
+        "failure": 34,
+        "risk_rate": 50.75
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 58,
+        "value": -36.27,
+        "avg_value": -0.6253,
+        "success": 3,
+        "failure": 34,
+        "risk_rate": 58.62
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -187.3700000000001,
+      "avg_value": -0.2546,
+      "success": 160,
+      "failure": 259,
+      "risk_rate": 35.19
+    },
+    "asked_action_stats": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -187.3700000000001,
+      "avg_value": -0.2546,
+      "success": 160,
+      "failure": 259,
+      "risk_rate": 35.19
+    },
+    "path_trace": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -187.3700000000001,
+        "avg_value": -0.2546,
+        "success": 160,
+        "failure": 259,
+        "risk_rate": 35.19,
+        "step": 0
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 122,
+        "value": -63.61000000000003,
+        "avg_value": -0.5214,
+        "success": 7,
+        "failure": 46,
+        "risk_rate": 37.7,
+        "step": 1
+      }
+    ]
+  },
+  {
+    "id": "Q11",
+    "question": "Why is the Up path better than the Down path from state 0?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "tree_file": "trees/mcts_tree_step_0.json",
+    "tree_root_state": 0,
+    "target_state": 0,
+    "target_action_asked": 3,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 258,
+        "value": -168.26,
+        "avg_value": -0.6522,
+        "success": 0,
+        "failure": 64,
+        "risk_rate": 24.81
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 255,
+        "value": -166.77999999999994,
+        "avg_value": -0.654,
+        "success": 0,
+        "failure": 64,
+        "risk_rate": 25.1
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 243,
+        "value": -159.80000000000013,
+        "avg_value": -0.6576,
+        "success": 0,
+        "failure": 63,
+        "risk_rate": 25.93
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 244,
+        "value": -160.67000000000007,
+        "avg_value": -0.6585,
+        "success": 0,
+        "failure": 69,
+        "risk_rate": 28.28
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 258,
+      "value": -168.26,
+      "avg_value": -0.6522,
+      "success": 0,
+      "failure": 64,
+      "risk_rate": 24.81
+    },
+    "asked_action_stats": {
+      "code": 3,
+      "name": "Up",
+      "visits": 255,
+      "value": -166.77999999999994,
+      "avg_value": -0.654,
+      "success": 0,
+      "failure": 64,
+      "risk_rate": 25.1
+    }
+  },
+  {
+    "id": "Q12",
+    "question": "Why does the agent prefer the Right path over the Up path at state 13?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "tree_file": "trees/mcts_tree_step_26.json",
+    "tree_root_state": 13,
+    "target_state": 13,
+    "target_action_asked": 2,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -187.3700000000001,
+        "avg_value": -0.2546,
+        "success": 160,
+        "failure": 259,
+        "risk_rate": 35.19
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 139,
+        "value": -62.030000000000015,
+        "avg_value": -0.4463,
+        "success": 16,
+        "failure": 69,
+        "risk_rate": 49.64
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 67,
+        "value": -39.48,
+        "avg_value": -0.5893,
+        "success": 1,
+        "failure": 34,
+        "risk_rate": 50.75
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 58,
+        "value": -36.27,
+        "avg_value": -0.6253,
+        "success": 3,
+        "failure": 34,
+        "risk_rate": 58.62
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -187.3700000000001,
+      "avg_value": -0.2546,
+      "success": 160,
+      "failure": 259,
+      "risk_rate": 35.19
+    },
+    "asked_action_stats": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -187.3700000000001,
+      "avg_value": -0.2546,
+      "success": 160,
+      "failure": 259,
+      "risk_rate": 35.19
+    }
+  },
+  {
+    "id": "Q13",
+    "question": "What would the path look like if the agent had chosen Left at state 13?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "tree_file": "trees/mcts_tree_step_9.json",
+    "tree_root_state": 13,
+    "target_state": 13,
+    "target_action_asked": 0,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -212.12000000000012,
+        "avg_value": -0.2882,
+        "success": 151,
+        "failure": 260,
+        "risk_rate": 35.33
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 118,
+        "value": -58.49,
+        "avg_value": -0.4957,
+        "success": 15,
+        "failure": 59,
+        "risk_rate": 50.0
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 88,
+        "value": -48.6,
+        "avg_value": -0.5523,
+        "success": 9,
+        "failure": 46,
+        "risk_rate": 52.27
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 58,
+        "value": -37.43,
+        "avg_value": -0.6453,
+        "success": 0,
+        "failure": 30,
+        "risk_rate": 51.72
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -212.12000000000012,
+      "avg_value": -0.2882,
+      "success": 151,
+      "failure": 260,
+      "risk_rate": 35.33
+    },
+    "asked_action_stats": {
+      "code": 0,
+      "name": "Left",
+      "visits": 58,
+      "value": -37.43,
+      "avg_value": -0.6453,
+      "success": 0,
+      "failure": 30,
+      "risk_rate": 51.72
+    }
+  },
+  {
+    "id": "Q14",
+    "question": "What path would the agent follow if Down were explored at the current state?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "tree_file": "trees/mcts_tree_step_20_fail.json",
+    "tree_root_state": 6,
+    "target_state": 6,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 345,
+        "value": -255.38999999999996,
+        "avg_value": -0.7403,
+        "success": 8,
+        "failure": 208,
+        "risk_rate": 60.29
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 330,
+        "value": -245.98000000000008,
+        "avg_value": -0.7454,
+        "success": 5,
+        "failure": 187,
+        "risk_rate": 56.67
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 182,
+        "value": -148.61,
+        "avg_value": -0.8165,
+        "success": 6,
+        "failure": 149,
+        "risk_rate": 81.87
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 143,
+        "value": -121.85000000000002,
+        "avg_value": -0.8521,
+        "success": 0,
+        "failure": 100,
+        "risk_rate": 69.93
+      }
+    ],
+    "chosen_action": {
+      "code": 0,
+      "name": "Left",
+      "visits": 345,
+      "value": -255.38999999999996,
+      "avg_value": -0.7403,
+      "success": 8,
+      "failure": 208,
+      "risk_rate": 60.29
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 182,
+      "value": -148.61,
+      "avg_value": -0.8165,
+      "success": 6,
+      "failure": 149,
+      "risk_rate": 81.87
+    }
+  },
+  {
+    "id": "Q15",
+    "question": "What is the agent's overall strategy at the current state?",
+    "question_type": "general",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_23.json",
+    "tree_root_state": 8,
+    "target_state": 8,
+    "target_action_asked": null,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 508,
+        "value": -326.47999999999985,
+        "avg_value": -0.6427,
+        "success": 5,
+        "failure": 223,
+        "risk_rate": 43.9
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 210,
+        "value": -154.19000000000005,
+        "avg_value": -0.7342,
+        "success": 0,
+        "failure": 128,
+        "risk_rate": 60.95
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 153,
+        "value": -119.26000000000003,
+        "avg_value": -0.7795,
+        "success": 0,
+        "failure": 94,
+        "risk_rate": 61.44
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 129,
+        "value": -103.95,
+        "avg_value": -0.8058,
+        "success": 0,
+        "failure": 80,
+        "risk_rate": 62.02
+      }
+    ],
+    "chosen_action": {
+      "code": 3,
+      "name": "Up",
+      "visits": 508,
+      "value": -326.47999999999985,
+      "avg_value": -0.6427,
+      "success": 5,
+      "failure": 223,
+      "risk_rate": 43.9
+    },
+    "asked_action_stats": {
+      "code": 3,
+      "name": "Up",
+      "visits": 508,
+      "value": -326.47999999999985,
+      "avg_value": -0.6427,
+      "success": 5,
+      "failure": 223,
+      "risk_rate": 43.9
+    }
+  },
+  {
+    "id": "Q16",
+    "question": "Why does the agent heavily favor action 1 at this near-goal state?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_31.json",
+    "tree_root_state": 14,
+    "target_state": 14,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 509,
+        "value": 131.48999999999995,
+        "avg_value": 0.2583,
+        "success": 262,
+        "failure": 92,
+        "risk_rate": 18.07
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 429,
+        "value": 110.08999999999997,
+        "avg_value": 0.2566,
+        "success": 226,
+        "failure": 86,
+        "risk_rate": 20.05
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 37,
+        "value": -6.989999999999999,
+        "avg_value": -0.1889,
+        "success": 6,
+        "failure": 6,
+        "risk_rate": 16.22
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 25,
+        "value": -8.87,
+        "avg_value": -0.3548,
+        "success": 3,
+        "failure": 7,
+        "risk_rate": 28.0
+      }
+    ],
+    "chosen_action": {
+      "code": 1,
+      "name": "Down",
+      "visits": 509,
+      "value": 131.48999999999995,
+      "avg_value": 0.2583,
+      "success": 262,
+      "failure": 92,
+      "risk_rate": 18.07
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 509,
+      "value": 131.48999999999995,
+      "avg_value": 0.2583,
+      "success": 262,
+      "failure": 92,
+      "risk_rate": 18.07
+    }
+  },
+  {
+    "id": "Q17",
+    "question": "Why does action 2 have the most visits despite having zero successes at state 6?",
+    "question_type": "node",
+    "question_form": "factual",
+    "tree_file": "trees/mcts_tree_step_5.json",
+    "tree_root_state": 6,
+    "target_state": 6,
+    "target_action_asked": 2,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 391,
+        "value": -277.25,
+        "avg_value": -0.7091,
+        "success": 7,
+        "failure": 224,
+        "risk_rate": 57.29
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 394,
+        "value": -280.8000000000001,
+        "avg_value": -0.7127,
+        "success": 16,
+        "failure": 237,
+        "risk_rate": 60.15
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 127,
+        "value": -108.70000000000002,
+        "avg_value": -0.8559,
+        "success": 0,
+        "failure": 93,
+        "risk_rate": 73.23
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 88,
+        "value": -81.12,
+        "avg_value": -0.9218,
+        "success": 0,
+        "failure": 73,
+        "risk_rate": 82.95
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 391,
+      "value": -277.25,
+      "avg_value": -0.7091,
+      "success": 7,
+      "failure": 224,
+      "risk_rate": 57.29
+    },
+    "asked_action_stats": {
+      "code": 2,
+      "name": "Right",
+      "visits": 391,
+      "value": -277.25,
+      "avg_value": -0.7091,
+      "success": 7,
+      "failure": 224,
+      "risk_rate": 57.29
+    }
+  },
+  {
+    "id": "Q18",
+    "question": "Why does the agent prefer Right over Up at state 13 despite similar visit counts?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "tree_file": "trees/mcts_tree_step_26.json",
+    "tree_root_state": 13,
+    "target_state": 13,
+    "target_action_asked": 2,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -187.3700000000001,
+        "avg_value": -0.2546,
+        "success": 160,
+        "failure": 259,
+        "risk_rate": 35.19
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 139,
+        "value": -62.030000000000015,
+        "avg_value": -0.4463,
+        "success": 16,
+        "failure": 69,
+        "risk_rate": 49.64
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 67,
+        "value": -39.48,
+        "avg_value": -0.5893,
+        "success": 1,
+        "failure": 34,
+        "risk_rate": 50.75
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 58,
+        "value": -36.27,
+        "avg_value": -0.6253,
+        "success": 3,
+        "failure": 34,
+        "risk_rate": 58.62
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -187.3700000000001,
+      "avg_value": -0.2546,
+      "success": 160,
+      "failure": 259,
+      "risk_rate": 35.19
+    },
+    "asked_action_stats": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -187.3700000000001,
+      "avg_value": -0.2546,
+      "success": 160,
+      "failure": 259,
+      "risk_rate": 35.19
+    }
+  },
+  {
+    "id": "Q19",
+    "question": "Why does the agent strongly commit to the current action over all alternatives at the current state?",
+    "question_type": "node",
+    "question_form": "contrastive",
+    "tree_file": "trees/mcts_tree_step_29.json",
+    "tree_root_state": 9,
+    "target_state": 9,
+    "target_action_asked": null,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 600,
+        "value": -307.51999999999964,
+        "avg_value": -0.5125,
+        "success": 43,
+        "failure": 257,
+        "risk_rate": 42.83
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 202,
+        "value": -126.66000000000007,
+        "avg_value": -0.627,
+        "success": 10,
+        "failure": 114,
+        "risk_rate": 56.44
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 102,
+        "value": -74.58,
+        "avg_value": -0.7312,
+        "success": 3,
+        "failure": 66,
+        "risk_rate": 64.71
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 96,
+        "value": -71.49000000000001,
+        "avg_value": -0.7447,
+        "success": 1,
+        "failure": 60,
+        "risk_rate": 62.5
+      }
+    ],
+    "chosen_action": {
+      "code": 1,
+      "name": "Down",
+      "visits": 600,
+      "value": -307.51999999999964,
+      "avg_value": -0.5125,
+      "success": 43,
+      "failure": 257,
+      "risk_rate": 42.83
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 600,
+      "value": -307.51999999999964,
+      "avg_value": -0.5125,
+      "success": 43,
+      "failure": 257,
+      "risk_rate": 42.83
+    }
+  },
+  {
+    "id": "Q20",
+    "question": "What would the agent's strategy look like if the Left action had been explored at the current state?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "tree_file": "trees/mcts_tree_step_9.json",
+    "tree_root_state": 13,
+    "target_state": 13,
+    "target_action_asked": 0,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 736,
+        "value": -212.12000000000012,
+        "avg_value": -0.2882,
+        "success": 151,
+        "failure": 260,
+        "risk_rate": 35.33
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 118,
+        "value": -58.49,
+        "avg_value": -0.4957,
+        "success": 15,
+        "failure": 59,
+        "risk_rate": 50.0
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 88,
+        "value": -48.6,
+        "avg_value": -0.5523,
+        "success": 9,
+        "failure": 46,
+        "risk_rate": 52.27
+      },
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 58,
+        "value": -37.43,
+        "avg_value": -0.6453,
+        "success": 0,
+        "failure": 30,
+        "risk_rate": 51.72
+      }
+    ],
+    "chosen_action": {
+      "code": 2,
+      "name": "Right",
+      "visits": 736,
+      "value": -212.12000000000012,
+      "avg_value": -0.2882,
+      "success": 151,
+      "failure": 260,
+      "risk_rate": 35.33
+    },
+    "asked_action_stats": {
+      "code": 0,
+      "name": "Left",
+      "visits": 58,
+      "value": -37.43,
+      "avg_value": -0.6453,
+      "success": 0,
+      "failure": 30,
+      "risk_rate": 51.72
+    }
+  },
+  {
+    "id": "Q21",
+    "question": "How would the agent's overall approach differ if Down had been tried at the current state?",
+    "question_type": "node",
+    "question_form": "counterfactual",
+    "tree_file": "trees/mcts_tree_step_20_fail.json",
+    "tree_root_state": 6,
+    "target_state": 6,
+    "target_action_asked": 1,
+    "target_path_asked": null,
+    "state_visits": 1000,
+    "all_actions": [
+      {
+        "code": 0,
+        "name": "Left",
+        "visits": 345,
+        "value": -255.38999999999996,
+        "avg_value": -0.7403,
+        "success": 8,
+        "failure": 208,
+        "risk_rate": 60.29
+      },
+      {
+        "code": 2,
+        "name": "Right",
+        "visits": 330,
+        "value": -245.98000000000008,
+        "avg_value": -0.7454,
+        "success": 5,
+        "failure": 187,
+        "risk_rate": 56.67
+      },
+      {
+        "code": 1,
+        "name": "Down",
+        "visits": 182,
+        "value": -148.61,
+        "avg_value": -0.8165,
+        "success": 6,
+        "failure": 149,
+        "risk_rate": 81.87
+      },
+      {
+        "code": 3,
+        "name": "Up",
+        "visits": 143,
+        "value": -121.85000000000002,
+        "avg_value": -0.8521,
+        "success": 0,
+        "failure": 100,
+        "risk_rate": 69.93
+      }
+    ],
+    "chosen_action": {
+      "code": 0,
+      "name": "Left",
+      "visits": 345,
+      "value": -255.38999999999996,
+      "avg_value": -0.7403,
+      "success": 8,
+      "failure": 208,
+      "risk_rate": 60.29
+    },
+    "asked_action_stats": {
+      "code": 1,
+      "name": "Down",
+      "visits": 182,
+      "value": -148.61,
+      "avg_value": -0.8165,
+      "success": 6,
+      "failure": 149,
+      "risk_rate": 81.87
+    }
+  }
+]

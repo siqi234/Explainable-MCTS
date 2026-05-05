@@ -1,0 +1,532 @@
+[
+  {
+    "id": "Q01",
+    "question": "Why did the agent choose Up at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 0,
+      "target_action": 3,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 0,
+      "target_action": 3,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q02",
+    "question": "Why is the current action chosen over the alternatives at state 14?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 14,
+      "target_action": null,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 14,
+      "target_action": 2,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": false,
+      "target_path": true
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q03",
+    "question": "Why does the agent prefer Down at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 9,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 9,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q04",
+    "question": "Why did the agent choose Up instead of Right at state 1?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 1,
+      "target_action": 3,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 1,
+      "target_action": 3,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q05",
+    "question": "Why did you choose action 1 instead of action 2 at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 9,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 9,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q06",
+    "question": "What would happen if the agent chose Left at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 13,
+      "target_action": 0,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 13,
+      "target_action": 0,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q07",
+    "question": "What would happen if the agent tried Down at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 6,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 6,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q08",
+    "question": "Why is the path through Down at state 14 considered the most reliable toward the goal?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 14,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 14,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q09",
+    "question": "Why does the agent take the current path through Down at state 14?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 14,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 14,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q10",
+    "question": "Why does going Right then Down from state 13 lead most reliably toward the goal?",
+    "question_type": "path",
+    "predicted": {
+      "target_state": 13,
+      "target_action": 2,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "path",
+      "target_state": 13,
+      "target_action": null,
+      "target_path": [
+        2,
+        1
+      ]
+    },
+    "comparison": {
+      "question_type": false,
+      "target_state": true,
+      "target_action": false,
+      "target_path": false
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q11",
+    "question": "Why is the Up path better than the Down path from state 0?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 0,
+      "target_action": null,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 0,
+      "target_action": 3,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": false,
+      "target_path": true
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q12",
+    "question": "Why does the agent prefer the Right path over the Up path at state 13?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 13,
+      "target_action": null,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 13,
+      "target_action": 2,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": false,
+      "target_path": true
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q13",
+    "question": "What would the path look like if the agent had chosen Left at state 13?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 13,
+      "target_action": 0,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 13,
+      "target_action": 0,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q14",
+    "question": "What path would the agent follow if Down were explored at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 6,
+      "target_action": null,
+      "target_path": [
+        1
+      ],
+      "question_type": "path"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 6,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": false,
+      "target_state": true,
+      "target_action": false,
+      "target_path": false
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q15",
+    "question": "What is the agent's overall strategy at the current state?",
+    "question_type": "general",
+    "predicted": {
+      "target_state": 8,
+      "target_action": null,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "general",
+      "target_state": null,
+      "target_action": null,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": false,
+      "target_state": false,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q16",
+    "question": "Why does the agent heavily favor action 1 at this near-goal state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 14,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 14,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q17",
+    "question": "Why does action 2 have the most visits despite having zero successes at state 6?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 6,
+      "target_action": 2,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 6,
+      "target_action": 2,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q18",
+    "question": "Why does the agent prefer Right over Up at state 13 despite similar visit counts?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 13,
+      "target_action": null,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 13,
+      "target_action": 2,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": false,
+      "target_path": true
+    },
+    "core_pass": false,
+    "full_pass": false
+  },
+  {
+    "id": "Q19",
+    "question": "Why does the agent strongly commit to the current action over all alternatives at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 9,
+      "target_action": null,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 9,
+      "target_action": null,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q20",
+    "question": "What would the agent's strategy look like if the Left action had been explored at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 13,
+      "target_action": 0,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 13,
+      "target_action": 0,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  },
+  {
+    "id": "Q21",
+    "question": "How would the agent's overall approach differ if Down had been tried at the current state?",
+    "question_type": "node",
+    "predicted": {
+      "target_state": 6,
+      "target_action": 1,
+      "target_path": null,
+      "question_type": "node"
+    },
+    "expected": {
+      "question_type": "node",
+      "target_state": 6,
+      "target_action": 1,
+      "target_path": null
+    },
+    "comparison": {
+      "question_type": true,
+      "target_state": true,
+      "target_action": true,
+      "target_path": true
+    },
+    "core_pass": true,
+    "full_pass": true
+  }
+]
