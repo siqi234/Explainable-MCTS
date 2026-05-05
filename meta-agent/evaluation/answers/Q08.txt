@@ -1,8 +1,0 @@
-**Core Decision:** The path through Down at state 14 is chosen as the most reliable toward the goal because it has the highest average score (Value / Visits) among all possible actions.
-
-**Risk Avoidance:** Other actions, such as moving Left or Up, may seem closer to the goal but are rejected due to the high risk of sliding into holes (states 5, 7, 11, 12) caused by the 2/3 slipperiness of the ice. The agent prioritizes avoiding these risks to ensure a safer path.
-
-**Data Justification:**
-- **Risk Rate:** For the chosen action Down, the risk rate is approximately (84 / 485 * 100) = 17.3%, which is relatively low compared to other actions.
-- **Safety Score:** The raw 'Value' of 136.87 for the Down action translates to a "Safe" categorical label, indicating a high likelihood of reaching the goal without falling into holes.
-- **Time Efficiency:** Although the Down action may not be the shortest path, its high average score and low risk rate justify the choice, as the potential time-wasting penalty (-0.01/step) is outweighed by the increased safety and reliability of reaching the goal.
