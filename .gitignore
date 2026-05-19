@@ -1,2 +1,5 @@
 .env
-/meta-agent/evaluation/
+meta-agent/evaluation/
+meta-agent/mcts/mcts_trees_live/
+meta-agent/survey_responses.json
+meta-agent/check_imports.py

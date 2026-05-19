@@ -55,23 +55,25 @@ DATA DICTIONARY:
       UCB = (Value / Visits) + √2 × sqrt(ln(parent_visits) / visits)
       The exploration term √2 × sqrt(ln(parent_visits) / visits) encourages the agent to try less-visited actions during search. At decision time this term is dropped and only Average Value matters."""
 
-    user_prompt = f"""Analyze the following MCTS JSON data and answer the user's question with a brief decision report.
+    user_prompt = f"""Analyze the following MCTS JSON data and answer the user's question with a brief decision report within 400 words.
 
 USER QUESTION:
 {user_question}
+
+INPUT JSON DATA:
+{json.dumps(mcts_json_data, indent=2)}
 
 REQUIRED INTUITIVE METRICS (always compute and include these):
     1. Risk Rate: (failure / visits) × 100, expressed as a percentage. Compute this for every action discussed.
     2. Safety Score: Translate Average Value (Value / Visits) into a categorical label (e.g., "High Risk", "Moderate", "Safe", "Optimal") based on your judgment of the scale.
     3. Time Efficiency: If an action has 0 failures but a low or negative Average Value, explain it as a time-wasting penalty (-0.01/step) rather than a fatal risk.
 
-REPORT STRUCTURE (under 250 words, clear non-technical style, directly addressing the user question above):
+REPORT STRUCTURE (under 200 words, clear non-technical style, directly addressing the user question above):
     - Core Decision: What action was chosen at what state and why (use Average Value to justify).
     - Risk Avoidance: Why seemingly closer or alternative actions were rejected (reference Risk Rate and the 2/3 slipperiness).
     - Data Justification: Back up the explanation with the computed Intuitive Metrics.
 
-INPUT JSON DATA:
-{json.dumps(mcts_json_data, indent=2)}"""
+"""
 
     messages = [
         {"role": "system", "content": system_prompt},
@@ -86,18 +88,22 @@ if __name__ == "__main__":
     client = OpenAI(api_key=os.getenv("GROQ_API_KEY"), 
                 base_url="https://api.groq.com/openai/v1")
     
-    json_file = 'mcts_trees_ver2/mcts_tree_step_1.json'
+    json_file = 'meta-agent/evaluation/trees/mcts_tree_step_20_fail.json'
     # json_file = 'mcts_trees_ver2/mcts_tree_step_13.json'
     with open(json_file, 'r') as f:
         json_data = json.load(f)
-
+    user_question = "What path would the agent follow if Down were explored at the current state?"
     
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile", 
         # model="openai/gpt-oss-120b",
-        messages=prompt(json_data),
+        messages=prompt(json_data, user_question),
         temperature=0.3, # Keep temperature low for factual, analytical responses
         # max_tokens=250, # Limit response length to ensure conciseness
     )
     
     print(response.choices[0].message.content)
+
+    # save response to file
+    with open('meta-agent/evaluation/case1_Q14_success.txt', 'w') as f:
+        f.write(response.choices[0].message.content)

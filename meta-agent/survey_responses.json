@@ -8,5 +8,15 @@
     "timestamp": "2026-05-01T11:45:20.584615",
     "mcts_familiarity": "Extremely familiar",
     "frozen_lake_familiarity": "Extremely familiar"
+  },
+  {
+    "timestamp": "2026-05-05T00:20:30.343856",
+    "mcts_familiarity": "Extremely familiar",
+    "frozen_lake_familiarity": "Extremely familiar"
+  },
+  {
+    "timestamp": "2026-05-10T15:39:27.978241",
+    "mcts_familiarity": "Extremely familiar",
+    "frozen_lake_familiarity": "Extremely familiar"
   }
 ]
