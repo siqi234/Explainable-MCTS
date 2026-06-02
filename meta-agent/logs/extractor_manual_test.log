@@ -1,0 +1,9 @@
+Q: What happens if the agent is at state 9 and goes right?
+-> {
+  "target_state": 9,
+  "target_action": 2,
+  "target_path": null,
+  "question_type": "node"
+}
+
+Q: What if the agent goes down then right from the start?

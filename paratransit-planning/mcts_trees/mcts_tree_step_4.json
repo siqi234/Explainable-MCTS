@@ -1,0 +1,54 @@
+{
+    "type": "RoutePlannerNode",
+    "state": 4,
+    "theta": {
+        "0": 1,
+        "1": 0,
+        "2": 0,
+        "3": 1
+    },
+    "visits": 168,
+    "value": 115.92,
+    "breakdown_Q": {
+        "trip_fulfillment": 100.8,
+        "timing": 15.12
+    },
+    "children": {
+        "0": {
+            "type": "RoutePlannerNode",
+            "state": -1,
+            "theta": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 1,
+                "4": 0
+            },
+            "visits": 84,
+            "value": 57.96,
+            "breakdown_Q": {
+                "trip_fulfillment": 50.4,
+                "timing": 7.56
+            },
+            "children": {}
+        },
+        "1": {
+            "type": "RoutePlannerNode",
+            "state": -1,
+            "theta": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 1,
+                "4": 1
+            },
+            "visits": 83,
+            "value": 57.27,
+            "breakdown_Q": {
+                "trip_fulfillment": 49.8,
+                "timing": 7.47
+            },
+            "children": {}
+        }
+    }
+}

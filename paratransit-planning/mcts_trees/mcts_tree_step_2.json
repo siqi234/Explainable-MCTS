@@ -1,0 +1,230 @@
+{
+    "type": "RoutePlannerNode",
+    "state": 2,
+    "theta": {
+        "0": 1,
+        "1": 0
+    },
+    "visits": 111,
+    "value": 65.818,
+    "breakdown_Q": {
+        "trip_fulfillment": 56.8,
+        "timing": 9.018
+    },
+    "children": {
+        "0": {
+            "type": "RoutePlannerNode",
+            "state": 3,
+            "theta": {
+                "0": 1,
+                "1": 0,
+                "2": 0
+            },
+            "visits": 83,
+            "value": 52.87,
+            "breakdown_Q": {
+                "trip_fulfillment": 45.4,
+                "timing": 7.47
+            },
+            "children": {
+                "0": {
+                    "type": "RoutePlannerNode",
+                    "state": 4,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 0,
+                        "3": 0
+                    },
+                    "visits": 11,
+                    "value": 3.19,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 2.2,
+                        "timing": 0.99
+                    },
+                    "children": {
+                        "1": {
+                            "type": "RoutePlannerNode",
+                            "state": -1,
+                            "theta": {
+                                "0": 1,
+                                "1": 0,
+                                "2": 0,
+                                "3": 0,
+                                "4": 1
+                            },
+                            "visits": 10,
+                            "value": 2.9,
+                            "breakdown_Q": {
+                                "trip_fulfillment": 2.0,
+                                "timing": 0.9
+                            },
+                            "children": {}
+                        }
+                    }
+                },
+                "1": {
+                    "type": "RoutePlannerNode",
+                    "state": 4,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 0,
+                        "3": 1
+                    },
+                    "visits": 71,
+                    "value": 48.99,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 42.6,
+                        "timing": 6.39
+                    },
+                    "children": {
+                        "0": {
+                            "type": "RoutePlannerNode",
+                            "state": -1,
+                            "theta": {
+                                "0": 1,
+                                "1": 0,
+                                "2": 0,
+                                "3": 1,
+                                "4": 0
+                            },
+                            "visits": 35,
+                            "value": 24.15,
+                            "breakdown_Q": {
+                                "trip_fulfillment": 21.0,
+                                "timing": 3.15
+                            },
+                            "children": {}
+                        },
+                        "1": {
+                            "type": "RoutePlannerNode",
+                            "state": -1,
+                            "theta": {
+                                "0": 1,
+                                "1": 0,
+                                "2": 0,
+                                "3": 1,
+                                "4": 1
+                            },
+                            "visits": 35,
+                            "value": 24.15,
+                            "breakdown_Q": {
+                                "trip_fulfillment": 21.0,
+                                "timing": 3.15
+                            },
+                            "children": {}
+                        }
+                    }
+                }
+            }
+        },
+        "1": {
+            "type": "RoutePlannerNode",
+            "state": 3,
+            "theta": {
+                "0": 1,
+                "1": 0,
+                "2": 1
+            },
+            "visits": 27,
+            "value": 12.258,
+            "breakdown_Q": {
+                "trip_fulfillment": 10.8,
+                "timing": 1.458
+            },
+            "children": {
+                "0": {
+                    "type": "RoutePlannerNode",
+                    "state": 4,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 1,
+                        "3": 0
+                    },
+                    "visits": 13,
+                    "value": 5.902,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 5.2,
+                        "timing": 0.702
+                    },
+                    "children": {
+                        "0": {
+                            "type": "RoutePlannerNode",
+                            "state": -1,
+                            "theta": {
+                                "0": 1,
+                                "1": 0,
+                                "2": 1,
+                                "3": 0,
+                                "4": 0
+                            },
+                            "visits": 6,
+                            "value": 2.724,
+                            "breakdown_Q": {
+                                "trip_fulfillment": 2.4,
+                                "timing": 0.324
+                            },
+                            "children": {}
+                        },
+                        "1": {
+                            "type": "RoutePlannerNode",
+                            "state": -1,
+                            "theta": {
+                                "0": 1,
+                                "1": 0,
+                                "2": 1,
+                                "3": 0,
+                                "4": 1
+                            },
+                            "visits": 6,
+                            "value": 2.724,
+                            "breakdown_Q": {
+                                "trip_fulfillment": 2.4,
+                                "timing": 0.324
+                            },
+                            "children": {}
+                        }
+                    }
+                },
+                "1": {
+                    "type": "RoutePlannerNode",
+                    "state": 4,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 1,
+                        "3": 1
+                    },
+                    "visits": 13,
+                    "value": 5.902,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 5.2,
+                        "timing": 0.702
+                    },
+                    "children": {
+                        "0": {
+                            "type": "RoutePlannerNode",
+                            "state": -1,
+                            "theta": {
+                                "0": 1,
+                                "1": 0,
+                                "2": 1,
+                                "3": 1,
+                                "4": 0
+                            },
+                            "visits": 12,
+                            "value": 5.448,
+                            "breakdown_Q": {
+                                "trip_fulfillment": 4.8,
+                                "timing": 0.648
+                            },
+                            "children": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

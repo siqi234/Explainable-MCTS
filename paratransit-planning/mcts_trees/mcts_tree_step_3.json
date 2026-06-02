@@ -1,0 +1,107 @@
+{
+    "type": "RoutePlannerNode",
+    "state": 3,
+    "theta": {
+        "0": 1,
+        "1": 0,
+        "2": 0
+    },
+    "visits": 133,
+    "value": 86.17,
+    "breakdown_Q": {
+        "trip_fulfillment": 74.2,
+        "timing": 11.97
+    },
+    "children": {
+        "0": {
+            "type": "RoutePlannerNode",
+            "state": 4,
+            "theta": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 0
+            },
+            "visits": 14,
+            "value": 4.06,
+            "breakdown_Q": {
+                "trip_fulfillment": 2.8,
+                "timing": 1.26
+            },
+            "children": {
+                "1": {
+                    "type": "RoutePlannerNode",
+                    "state": -1,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 0,
+                        "3": 0,
+                        "4": 1
+                    },
+                    "visits": 13,
+                    "value": 3.77,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 2.6,
+                        "timing": 1.17
+                    },
+                    "children": {}
+                }
+            }
+        },
+        "1": {
+            "type": "RoutePlannerNode",
+            "state": 4,
+            "theta": {
+                "0": 1,
+                "1": 0,
+                "2": 0,
+                "3": 1
+            },
+            "visits": 118,
+            "value": 81.42,
+            "breakdown_Q": {
+                "trip_fulfillment": 70.8,
+                "timing": 10.62
+            },
+            "children": {
+                "0": {
+                    "type": "RoutePlannerNode",
+                    "state": -1,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 0,
+                        "3": 1,
+                        "4": 0
+                    },
+                    "visits": 59,
+                    "value": 40.71,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 35.4,
+                        "timing": 5.31
+                    },
+                    "children": {}
+                },
+                "1": {
+                    "type": "RoutePlannerNode",
+                    "state": -1,
+                    "theta": {
+                        "0": 1,
+                        "1": 0,
+                        "2": 0,
+                        "3": 1,
+                        "4": 1
+                    },
+                    "visits": 58,
+                    "value": 40.02,
+                    "breakdown_Q": {
+                        "trip_fulfillment": 34.8,
+                        "timing": 5.22
+                    },
+                    "children": {}
+                }
+            }
+        }
+    }
+}

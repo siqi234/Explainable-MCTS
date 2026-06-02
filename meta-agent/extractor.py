@@ -31,10 +31,6 @@ The root node of the tree above is the agent's current state.
 When the user says "current state", "current position", "here", or "now", look up the "state" field of the root node and use that value.
 The root state for this tree is {root_state}.
 
-If the user asks about why the agent chose, avoided, tried, or did not try a
-single action without naming a state, treat it as a node question at the root
-state. Do not classify action-specific current-decision questions as general.
-
 YOUR TASK:
 Extract the user's intent from their question and return ONLY a JSON object — no explanation, no prose.
 
@@ -47,22 +43,43 @@ OUTPUT SCHEMA:
 }}
 
 QUESTION TYPE RULES:
-- "node"    : user asks about a specific state or action at a state (target_state will be set)
-- "path"    : user asks about a sequence of moves (target_path will be set)
+- "node"    : user asks about a specific state, or about a single action at a state (target_state will be set)
+- "path"    : user asks about a sequence of two or more moves (target_path will be set)
 - "general" : question is about overall behavior, no specific state or path referenced
+- If the user asks about a single action (chose, avoided, tried, did not try) without naming a state, classify as "node" at the root state. Do not classify these as "general".
+
+COMPARISON RULES:
+- In comparative phrasings ("X instead of Y", "X over Y", "X better than Y", "prefer X over Y"), target_action = X (the favored/chosen side), never Y.
+- "X path" used informally means direction X, not a move sequence. Treat it as a node question and map the direction to its action number.
+- If the user refers to "the current action" or "the chosen action" without naming it explicitly, look up target_state in the MCTS tree and find the child with the highest visit count — that is the chosen action.
 
 EXAMPLES:
 Q: "What happens if the agent is at state 9 and goes right?"
 -> {{"target_state": 9, "target_action": 2, "target_path": null, "question_type": "node"}}
 
+Q: "What happened in state 13?"
+-> {{"target_state": 13, "target_action": null, "target_path": null, "question_type": "node"}}
+
 Q: "What if the agent goes down then right from the start?"
 -> {{"target_state": 0, "target_action": null, "target_path": [1, 2], "question_type": "path"}}
+
+Q: "What if the agent goes down then right from state 5?"
+-> {{"target_state": 5, "target_action": null, "target_path": [1, 2], "question_type": "path"}}
 
 Q: "Can we go right then down from current state?"
 -> {{"target_state": {root_state}, "target_action": null, "target_path": [2, 1], "question_type": "path"}}
 
 Q: "Why did the agent avoid going left?"
 -> {{"target_state": {root_state}, "target_action": 0, "target_path": null, "question_type": "node"}}
+
+Q: "Why did the agent pick Down instead of Right at state 6?"
+-> {{"target_state": 6, "target_action": 1, "target_path": null, "question_type": "node"}}
+
+Q: "Why is the Left path worse than the Right path at state 9?"
+-> {{"target_state": 9, "target_action": 0, "target_path": null, "question_type": "node"}}
+
+Q: "Why does the agent favor Down over Left at state 10?"
+-> {{"target_state": 10, "target_action": 1, "target_path": null, "question_type": "node"}}
 
 Q: "What is the safest move overall?"
 -> {{"target_state": null, "target_action": null, "target_path": null, "question_type": "general"}}
@@ -177,7 +194,7 @@ def extract_intent(client, user_question: str, mcts_json_data: dict) -> dict:
     return normalize_intent(intent, root_state)
 
 
-# --- Manual test ---
+# Test
 if __name__ == "__main__":
     load_dotenv()
     client = OpenAI(
