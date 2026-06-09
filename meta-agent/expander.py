@@ -7,6 +7,18 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 from mcts_from_scratch_ver2 import MCTS
 
 
+def set_slip(env, slip=0.1):
+    for s in env.P:
+        for a in env.P[s]:
+            t = env.P[s][a]
+            if len(t) == 3:
+                env.P[s][a] = [
+                    (slip/2, t[0][1], t[0][2], t[0][3]),
+                    (1-slip, t[1][1], t[1][2], t[1][3]),
+                    (slip/2, t[2][1], t[2][2], t[2][3]),
+                ]
+
+
 def find_path_to_state(node, target_state):
     """
     DFS from a DecisionNode dict to find the first DecisionNode with target_state.
@@ -59,7 +71,7 @@ def graft_and_backpropagate(tree, target_state, target_action, new_subtree):
         delta_success = new_subtree.get('success', 0)
         delta_failure = new_subtree.get('failure', 0)
     else:
-        # Action exists but had insufficient visits — merge new stats in (叠加)
+        # Action exists but had insufficient visits — merge new stats in 
         delta_visits  = new_subtree['visits']
         delta_value   = new_subtree['value']
         delta_success = new_subtree.get('success', 0)
@@ -90,24 +102,30 @@ def expand_and_graft(tree_file, target_state, target_action, output_file, iterat
 
     # Run MCTS from target_state — only this subtree grows, the rest is frozen
     sim_env = gym.make('FrozenLake-v1', map_name="4x4", is_slippery=True).unwrapped
+    set_slip(sim_env)
     sim_env.reset(seed=42)
 
     mcts = MCTS(sim_env, iterations=iterations)
     mcts.search(target_state)
     sim_env.close()
 
-    if target_action not in mcts.root.children:
-        print(f"[expander] Action {target_action} was not explored. Try more iterations.")
-        return
+    actions_to_graft = [target_action] if target_action is not None else list(mcts.root.children.keys())
 
-    new_subtree = mcts.root.children[target_action].to_dict(current_depth=0, max_depth=3)
+    grafted = False
+    for action in actions_to_graft:
+        if action not in mcts.root.children:
+            print(f"[expander] Action {action} was not explored. Try more iterations.")
+            continue
+        new_subtree = mcts.root.children[action].to_dict(current_depth=0, max_depth=3)
+        success = graft_and_backpropagate(tree, target_state, action, new_subtree)
+        if success:
+            grafted = True
+            print(f"[expander] Grafted action {action} at state {target_state}.")
+            print(f"  New subtree — visits: {new_subtree['visits']}, value: {new_subtree['value']:.3f}")
 
-    success = graft_and_backpropagate(tree, target_state, target_action, new_subtree)
-    if success:
+    if grafted:
         with open(output_file, 'w') as f:
             json.dump(tree, f, indent=2)
-        print(f"[expander] Grafted action {target_action} at state {target_state}.")
-        print(f"  New subtree — visits: {new_subtree['visits']}, value: {new_subtree['value']:.3f}")
         print(f"  Saved to {output_file}")
 
 

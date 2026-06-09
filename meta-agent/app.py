@@ -14,6 +14,18 @@ import expander
 from openai import OpenAI
 from dotenv import load_dotenv
 
+
+def set_slip(env, slip=0.1):
+    for s in env.P:
+        for a in env.P[s]:
+            t = env.P[s][a]
+            if len(t) == 3:
+                env.P[s][a] = [
+                    (slip/2, t[0][1], t[0][2], t[0][3]),
+                    (1-slip, t[1][1], t[1][2], t[1][3]),
+                    (slip/2, t[2][1], t[2][2], t[2][3]),
+                ]
+
 load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 # ── Constants ────────────────────────────────────────────────────────────────
@@ -51,6 +63,7 @@ def make_client():
 
 def init_game():
     sim_env = gym.make("FrozenLake-v1", map_name="4x4", is_slippery=True).unwrapped
+    set_slip(sim_env)
     sim_env.reset(seed=42)
     vis_env = gym.make("FrozenLake-v1", map_name="4x4", is_slippery=True, render_mode="rgb_array")
     obs, _ = vis_env.reset(seed=42)
@@ -232,19 +245,23 @@ with right:
                     target_state = intent.get("target_state")
                     target_action = intent.get("target_action")
 
-                    if target_state is not None and target_action is not None:
-                        st.write(f"Gap detected — expanding tree at state {target_state}, action {target_action} ({ACTIONS.get(target_action, target_action)})...")
-                        expander.expand_and_graft(
-                            tree_file=tree_path,
-                            target_state=target_state,
-                            target_action=target_action,
-                            output_file=tree_path,
-                            iterations=1000,
-                        )
-                        with open(tree_path) as f:
-                            tree = json.load(f)
-                        st.session_state.current_tree = tree
-                        gap = detector.check_gap(tree, intent)
+                    if target_state is not None:
+                        action_label = f", action {target_action} ({ACTIONS.get(target_action, target_action)})" if target_action is not None else ""
+                        for attempt in range(3):
+                            st.write(f"Gap detected — expanding tree at state {target_state}{action_label} (attempt {attempt + 1})...")
+                            expander.expand_and_graft(
+                                tree_file=tree_path,
+                                target_state=target_state,
+                                target_action=target_action,
+                                output_file=tree_path,
+                                iterations=1000,
+                            )
+                            with open(tree_path) as f:
+                                tree = json.load(f)
+                            st.session_state.current_tree = tree
+                            gap = detector.check_gap(tree, intent)
+                            if gap["answerable"]:
+                                break
 
                 if gap["answerable"]:
                     st.write("Generating answer...")

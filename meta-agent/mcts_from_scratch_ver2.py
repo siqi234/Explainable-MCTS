@@ -200,7 +200,7 @@ class MCTS:
                     outcome = 'hole'
                 break
             
-            total_rewards -= 0.01
+            # total_rewards -= 0.01 # time penalty to encourage shorter paths
             depth += 1
             current_state = next_state
 
