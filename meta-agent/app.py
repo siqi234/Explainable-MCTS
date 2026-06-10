@@ -7,7 +7,8 @@ import json
 sys.path.insert(0, os.path.dirname(__file__))
 
 from mcts_from_scratch_ver2 import MCTS
-import LLM
+# import LLM
+import LLM2 as LLM
 import extractor
 import detector
 import expander

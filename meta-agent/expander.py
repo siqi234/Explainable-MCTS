@@ -91,7 +91,7 @@ def graft_and_backpropagate(tree, target_state, target_action, new_subtree):
     return True
 
 
-def expand_and_graft(tree_file, target_state, target_action, output_file, iterations=1000):
+def expand_and_graft(tree_file, target_state, target_action, output_file, iterations=2000):
     """
     Loads an existing MCTS tree from tree_file, runs targeted MCTS from
     target_state to build the new subtree for target_action, grafts it into
